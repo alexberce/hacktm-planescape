@@ -1,2 +1,2 @@
 # hacktm-planescape
-Group planning made made easier
+Group planning made easier
