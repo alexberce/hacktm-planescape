@@ -65,11 +65,11 @@
 							<li><a href="<?=base_url()?>activity/add">
 									<i class="fa fa-plus-circle"></i> Create Activity </a>
 							</li>
-							<li><a href="<?=base_url()?>activity/add">
-									<i class="fa fa-plus-circle"></i> Past Activities </a>
+							<li><a href="<?=base_url()?>activity/view">
+									<i class="fa fa-plus-circle"></i> Activities </a>
 							</li>
-							<li><a href="<?=base_url()?>activity/add">
-									<i class="fa fa-send-o"></i> Invite </a>
+							<li><a href="<?=base_url()?>activity/view">
+									<i class="fa fa-plus-circle"></i> Settings </a>
 							</li>
 						</ul>
 					</div>
@@ -142,7 +142,7 @@
                                           <img src="<?=base_url()?>assets/images/img.jpg" alt="Profile Image"/>
                                       </span>
                         <span>
-                                          <span>John Smith</span>
+                                          <span><?=$this->session->userdata('username');?></span>
                         <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">
@@ -156,7 +156,7 @@
                                           <img src="<?=base_url()?>assets/images/img.jpg" alt="Profile Image"/>
                                       </span>
                         <span>
-                                          <span>John Smith</span>
+                                          <span><?=$this->session->userdata('username');?></span>
                         <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">
@@ -170,7 +170,7 @@
                                           <img src="<?=base_url()?>assets/images/img.jpg" alt="Profile Image"/>
                                       </span>
                         <span>
-                                          <span>John Smith</span>
+                                          <span><?=$this->session->userdata('username');?></span>
                         <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">
@@ -184,7 +184,7 @@
                                           <img src="<?=base_url()?>assets/images/img.jpg" alt="Profile Image"/>
                                       </span>
                         <span>
-                                          <span>John Smith</span>
+                                          <span><?=$this->session->userdata('username');?></span>
                         <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">
