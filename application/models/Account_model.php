@@ -20,13 +20,9 @@ class Account_model extends CI_Model
         return $query->row_array();
     }
 
-    public function getUsers(){
-        $this->db->select('*');
-        $this->db->from('users');
-
-        $query = $this->db->get();
-
-        return $query->results();
+    public function register($data)
+    {
+        $this->db->insert('users',$data);
     }
 
 }
