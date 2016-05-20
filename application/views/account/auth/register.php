@@ -6,7 +6,7 @@
 		</div>
 
 		<div class="regp pull-left">
-			<form action="?" method="post" id="register-form">
+			<form action="<?=base_url()?>account/register" method="post" id="register-form">
 				<div class="oauth-content">
 					<ul>
 						<li>
