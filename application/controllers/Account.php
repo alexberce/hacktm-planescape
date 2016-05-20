@@ -26,11 +26,11 @@ class Account extends CI_Controller
 				);
 
 				$this->session->set_userdata($userdata);
+				redirect('dashboard');
 			}
 		}
 		$this->data['view'] = 'login';
 		$this->load->view('account/auth/layout', $this->data);
-		redirect('dashboard');
 	}
 
 	public function register()

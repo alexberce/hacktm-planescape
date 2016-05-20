@@ -65,6 +65,12 @@
 							<li><a href="<?=base_url()?>activity/add">
 									<i class="fa fa-plus-circle"></i> Create Activity </a>
 							</li>
+							<li><a href="<?=base_url()?>activity/add">
+									<i class="fa fa-plus-circle"></i> Past Activities </a>
+							</li>
+							<li><a href="<?=base_url()?>activity/add">
+									<i class="fa fa-send-o"></i> Invite </a>
+							</li>
 						</ul>
 					</div>
 
