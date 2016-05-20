@@ -55,6 +55,9 @@
 				<li>
 					<a href="#contact">Contact</a>
 				</li>
+				<li>
+					<a href="<?=base_url()?>account/login">Login</a>
+				</li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
