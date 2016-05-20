@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Gentallela Alela! | </title>
+	<title>PlanEscape | </title>
 
 	<!-- Bootstrap -->
 	<link href="<?=base_url()?>assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -74,7 +74,7 @@
 					<a data-toggle="tooltip" data-placement="top" title="Lock">
 						<span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
 					</a>
-					<a data-toggle="tooltip" data-placement="top" title="Logout">
+					<a href="<?=base_url()?>account/logout" data-toggle="tooltip" data-placement="top" title="Logout">
 						<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
 					</a>
 				</div>
@@ -110,7 +110,7 @@
 								<li>
 									<a href="javascript:;">Help</a>
 								</li>
-								<li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+								<li><a href="<?=base_url()?>account/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
 								</li>
 							</ul>
 						</li>
