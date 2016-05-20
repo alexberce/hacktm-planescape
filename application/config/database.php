@@ -74,10 +74,10 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
+	'dsn'	=> 'mysql:host=hacktm-planescape.cxzrl9fkyz3t.us-west-2.rds.amazonaws.com;dbname=hacktm_planescape',
+	'port' => 3306,
+	'username' => 'hacktm_pescape',
+	'password' => 'planescape',
 	'database' => '',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
