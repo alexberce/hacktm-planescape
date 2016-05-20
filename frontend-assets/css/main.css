@@ -107,3 +107,184 @@
 	.login-form {
 		text-align: center;
 	}
+
+	/*Register*/
+
+	.register-form {
+    position: absolute;
+    width: 300px;
+    background-color: #FFF;
+    padding: 25px;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -300px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 6px 1px #D4D2D2;
+}
+
+.register-form .reg{
+    width: 303px;
+    /* padding: 4px; */
+    position: relative;
+    
+}
+
+.register-form .pull-left{
+    width: 100%;
+}
+
+.register-form .oauth{
+    display : block;
+    margin-top: 60px;
+    margin-right: 10px;
+}
+
+.register-form .oauth h4{
+    color:#949494;
+}
+
+.register-form .oauth .content{
+    padding:5px;
+}
+
+.register-form .oauth-content ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+.register-form .oauth-content button, .register-form .oauth-content a {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}   
+
+.register-form .oauth-content .facebook a.btn {
+    background-color: #3a5795;
+    color: white;
+}  
+
+.register-form .oauth-content .twitter button {
+    background-color: #1dcaff;
+    color: white;
+}   
+
+.register-form .oauth-content .google button {
+    background-color: #d34836;
+    color: white;
+}
+
+.register-form .oauth-content .linkedin button {
+    background-color: #007bb6;
+    color: white;
+}         
+
+.register-form input {
+    position: relative; 
+    margin-top: 20px;
+}
+
+.register-form .brand h2{
+    text-align: center;
+		font-weight: 300px;
+		font-weight:bold;
+		font-size: 25px;
+		margin-bottom: 25px;
+}
+
+.register-form .password-control{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.register-form .password-control button{
+    width: 100%;
+    height: 25px;
+    font-size: 12px;
+    background-color: #F1F1F1;
+    border: 1px solid #DCDCDC;
+    outline: 0;
+    border-radius: 3px;
+}
+
+.register-form .password-control button:hover{
+    cursor: default;
+    background-color: #D5D5D5;
+    border-color: #C7C6C6;
+}
+
+
+.input-error{
+    border-color:rgba(255, 0, 0, 0.79);
+}
+
+.input-valid{
+    border-color:rgb(55, 175, 11);
+}
+.btn {
+    border : 1px solid transparent;
+}
+
+.fa-facebook-official:before {
+    content: "\f230";
+    color: white;
+}
+
+.password-form h5  {
+    font-size: 0.8em;
+    color: #a94442;
+    text-align: center;
+    margin-bottom: -8px;
+    margin-top: 2px;
+}
+
+.fname-form h5 {
+    font-size: 0.8em;
+    color: #a94442;
+    text-align: center;
+    margin-bottom: -8px;
+    margin-top: 2px;
+}
+
+.lname-form h5 {
+    font-size: 0.8em;
+    color: #a94442;
+    text-align: center;
+    margin-bottom: -8px;
+    margin-top: 2px;
+}
+
+.code-form h5 {
+    font-size: 0.8em;
+    color: #a94442;
+    text-align: center;
+    margin-bottom: -8px;
+    margin-top: 2px;
+}
+
+.email-form h5 {
+    font-size: 0.8em;
+    color: #a94442;
+    text-align: center;
+    margin-bottom: -8px;
+    margin-top: 2px;
+}
+
+.username-form h5 {
+    font-size: 0.8em;
+    color: #a94442;
+    text-align: center;
+    margin-bottom: -8px;
+    margin-top: 2px;
+}
+
+.register-link {
+	font-size: 10px;
+	text-align: center;
+}
+
+.register-redirection-link{
+	color: green;
+}
