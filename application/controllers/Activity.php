@@ -34,8 +34,8 @@ class Activity extends CI_Controller
             $this->Activity_model->addActivity($data);
         }
 
-        $this->data['view']='add_activity';
-        $this->load->view('activity/layout',$this->data);
+        $this->data['view']='activity/add_activity';
+        $this->load->view('account/layout',$this->data);
 
     }
 
