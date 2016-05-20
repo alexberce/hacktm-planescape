@@ -28,7 +28,7 @@ class Account extends CI_Controller
             }
         }
         $this->data['view']='login';
-        $this->load->view('layout',$this->data);
+        $this->load->view('account/auth/layout',$this->data);
     }
 
     public function register()
@@ -44,12 +44,12 @@ class Account extends CI_Controller
         $this->form_validation->set_rules('r_password', 'Retype Password', 'required|md5|matches[password]');
 
         if($this->form_validation->run() == true){
-            $data = array(
+            $this->data = array(
                 'email' => $email,
                 'username' => $username,
                 'password' => md5($password)
             );
-            $this->Account_model->register($data);
+            $this->Account_model->register($this->data);
             $id = $this->db->insert_id();
             $userdata = array(
                 'username' => $username,
@@ -61,6 +61,6 @@ class Account extends CI_Controller
 
         }
         $this->data['view']='register';
-        $this->load->view('layout',$this->data);
+        $this->load->view('account/auth/layout',$this->data);
     }
 }

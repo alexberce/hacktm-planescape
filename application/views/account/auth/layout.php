@@ -6,6 +6,6 @@
  * Time: 23:44
  */
 
-$this->load->view('auth/header', $data);
-$this->load->view('auth/'.$view, $data);
-$this->load->view('auth/footer', $data);
+$this->load->view('account/auth/header');
+$this->load->view('account/auth/' . $view);
+$this->load->view('account/auth/footer');
