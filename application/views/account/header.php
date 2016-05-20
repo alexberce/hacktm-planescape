@@ -57,6 +57,9 @@
 							<li><a href="<?=base_url()?>dashboard">
 									<i class="fa fa-laptop"></i> Dashboard </a>
 							</li>
+							<li><a href="<?=base_url()?>activity/add">
+									<i class="fa fa-plus-circle"></i> Create Activity </a>
+							</li>
 						</ul>
 					</div>
 

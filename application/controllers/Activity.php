@@ -17,7 +17,7 @@ class Activity extends CI_Controller
         $this->load->view('activity/layout',$this->data);
     }
 
-    public function add_activity()
+    public function add()
     {
         $title = $this->input->post('title');
         $description = $this->input->post('description');
@@ -34,7 +34,7 @@ class Activity extends CI_Controller
             $this->Activity_model->addActivity($data);
         }
 
-        $this->data['view']='activity/add_activity';
+        $this->data['view']='activity/add';
         $this->load->view('account/layout',$this->data);
 
     }
