@@ -1,16 +1,4 @@
-<html>
-<head>
-  <title>HackTM</title>
-
-    <!-- Bootstrap -->	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<link rel="stylesheet" href="<?php echo base_url().'frontend-assets/css/main.css';?>">
-	<link rel="stylesheet" href="<?php echo base_url().'frontend-assets/font-awesome/css/font-awesome.css';?>">
-
-</head>
-
-<body>
-  <div class="wrapper">
+ <div class="wrapper">
     <div class="login-form">
       <div class="brand">
         <h2>Welcome!</h2>
@@ -55,8 +43,3 @@
 
     </div>
   </div>
-
-
-
-</body>
-</html>
