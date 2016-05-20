@@ -199,3 +199,4 @@
 
 		<!-- page content -->
 		<div class="right_col" role="main">
+<?php $this->load->view('account/header-parts/messages'); ?>
