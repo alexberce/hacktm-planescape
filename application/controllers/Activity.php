@@ -11,7 +11,6 @@ class Activity extends CI_Controller
 
     public function index()
     {
-        $this->data = $this->Activity_model->getActivities();
 
         $this->data['view']='dashboard';
         $this->load->view('activity/layout',$this->data);
@@ -36,6 +35,7 @@ class Activity extends CI_Controller
 
         $this->data['view']='activity/add';
         $this->load->view('account/layout',$this->data);
+        redirect('dashboard');
 
     }
 

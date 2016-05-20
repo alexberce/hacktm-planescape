@@ -12,9 +12,13 @@ class Dashboard extends MY_Controller_Common
 	{
 		parent::__construct();
 		$this->load->model('Dashboard_model');
+		$this->load->model('Activity_model');
+		$this->user_id = $this->session->userdata('id');
 	}
 
 	public function index(){
+		$data['activities'] = $this->Activity_model->getActivities();
+
 		$data['view'] = 'dashboard/dashboard';
 		$this->load->view('account/layout', $data);
 	}

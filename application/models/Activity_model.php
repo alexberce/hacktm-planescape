@@ -20,6 +20,20 @@ class Activity_model extends CI_Model
 
     }
 
+    public function getActivity($id)
+    {
+        $this->db->select('a.*');
+        $this->db->from('activity','a');
+        $this->db->join('questions','q','q.activity_id = a.id');
+        $this->db->join('question_answers','qa','q.id = qa.question_id');
+        $this->db->join('files','f','a.id = f.activity_id');
+
+        $query = $this->db->get();
+
+        return $query->results();
+
+    }
+
     public function addActivity($data)
     {
         $this->db->insert('activity',$data);

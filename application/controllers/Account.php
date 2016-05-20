@@ -10,9 +10,9 @@ class Account extends CI_Controller
 
 	public function login()
 	{
-		$username = $this->input->post('username');
+		$username = $this->input->post('identifier');
 		$password = $this->input->post('password');
-		$this->form_validation->set_rules('username', 'Username', 'required');
+		$this->form_validation->set_rules('identifier', 'Username', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required|md5');
 		if ($this->form_validation->run() == true) {
 			$user = $this->Account_model->login($username, md5($password));
@@ -24,11 +24,13 @@ class Account extends CI_Controller
 					'id'       => $user['id'],
 					'loggedIn' => true,
 				);
+
 				$this->session->set_userdata($userdata);
 			}
 		}
 		$this->data['view'] = 'login';
 		$this->load->view('account/auth/layout', $this->data);
+		redirect('dashboard');
 	}
 
 	public function register()

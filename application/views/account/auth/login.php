@@ -36,7 +36,7 @@
 			</div>
 		</div>
 		<hr />
-		<form action="/login" method="post" id="login-form">
+		<form action="<?=base_url()?>account/login" method="post" id="login-form">
 			<div class="form-group email-field email-form">
 				<input type="text" class="form-control" placeholder="Username or Email" id="username-field" name="identifier">
 				<span class="form-control-feedback glyphicon " aria-hidden="true" id="email-check"></span>
