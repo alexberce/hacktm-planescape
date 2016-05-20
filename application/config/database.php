@@ -79,7 +79,7 @@ $db['default'] = array(
 	'username' => 'hacktm_pescape',
 	'password' => 'planescape',
 	'database' => '',
-	'dbdriver' => 'mysqli',
+	'dbdriver' => 'pdo',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
