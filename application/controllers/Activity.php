@@ -118,9 +118,11 @@ class Activity extends MY_Controller
 
 	public function invite_friend($id){
 		$this->data['activity'] = current($this->Activity_model->getActivity($id));
+		$email_address = $this->input->post('friend_email');
+
+		$this->Acctivity_model->create_event_invitation($id, $email);
 
 		$this->data['activity_owner'] = $this->session->userdata('username');
-		$email_address = $this->input->post('friend_email');
 		$subject = 'You\'ve been invited to an event';
 		$text = $this->load->view('messages/emails/invitation', $this->data, true);
 		$this->send_mail($email_address, $subject, $text);
