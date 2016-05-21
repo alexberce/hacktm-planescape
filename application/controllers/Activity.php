@@ -1,6 +1,6 @@
 <?php
 
-class Activity extends CI_Controller
+class Activity extends MY_Controller
 {
     public function __construct()
     {
@@ -116,12 +116,24 @@ class Activity extends CI_Controller
         $this->load->view('account/layout',$this->data);
     }
 
-    public function showEventDetails(){
-        $eventId = $_GET['eventId'];
-        if (!empty($eventId)) {
-            $data['event_details'] = $this->Activity_model->getEventDetails($eventId);
-            $data['gallery_photos'] = $this->Uploads_model->getPhotosById($eventId);
-            $this->load->view('account/activity/event_details', $data);
-        } 
-    }
+	public function showEventDetails(){
+		$eventId = $_GET['eventId'];
+		if (!empty($eventId)) {
+			$data['event_details'] = $this->Activity_model->getEventDetails($eventId);
+			$data['gallery_photos'] = $this->Uploads_model->getPhotosById($eventId);
+			$this->load->view('account/activity/event_details', $data);
+		}
+	}
+
+	public function invite_friend(){
+		$this->data['activity'] = current($this->Activity_model->getActivity(20));
+
+		$this->data['activity_owner'] = $this->session->userdata('username');
+		$email_address = $this->input->post('friend_email');
+		$subject = 'You\'ve been invited to an event';
+		$text = $this->load->view('messages/emails/invitation', $this->data, true);
+		$this->send_mail($email_address, $subject, $text);
+
+		redirect('activity/upcoming');
+	}
 }
