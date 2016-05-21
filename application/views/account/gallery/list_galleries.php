@@ -10,7 +10,7 @@
 <div class=" margin_container">
 
     <div class="photo">
-        <img width="70%" height="300px" src="<?php echo base_url().$activity['path']; ?>" />
+        <img width="75%" height="300px" src="<?php echo base_url().$activity['path']; ?>" />
     </div>
 
     <div class="details">
@@ -23,7 +23,7 @@
                 <div class="event-title">
 
                    <div class="event-income">
-                       <i class="fa fa-lg fa-users event-users-icon" aria-hidden="true"></i><?php echo $activity['votes'].' Will be there.'; ?>
+                       <i class="fa fa-lg fa-users event-users-icon" aria-hidden="true"></i><?php echo $activity['votes'].' Photos'; ?>
                    </div>
                 </div>
             </div>
