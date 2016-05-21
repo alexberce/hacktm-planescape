@@ -19,19 +19,9 @@ class Dashboard extends MY_Controller
 
 	public function index()
 	{
-
 		$data['view'] = 'dashboard/dashboard';
-
-
-		if (!empty($_GET['eventId'])) {
-			$data['event_details'] = $this->Activity_model->getEventDetails($_GET['eventId']);
-			$data['gallery_photos'] = $this->Uploads_model->getPhotosById($_GET['eventId']);
-			$this->load->view('account/activity/event_details', $data);
-		} else {
-
-			$data['activities'] = $this->Activity_model->getActivities();
-			$this->load->view('account/layout', $data);
-		}
+		$data['activities'] = $this->Activity_model->getActivities();
+		$this->load->view('account/layout', $data);
 	}
 
 	public function test_mail(){

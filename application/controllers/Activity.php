@@ -6,6 +6,7 @@ class Activity extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Activity_model');
+        $this->load->model('Uploads_model');
         $this->user_id = $this->session->userdata('id');
     }
 
@@ -44,7 +45,7 @@ class Activity extends CI_Controller
                 'cover' => $file,
                 'date' => $start_date,
                 'end_date' => $end_date
-            );
+                );
 
             $this->Activity_model->addActivity($data);
             redirect('dashboard');
@@ -75,7 +76,7 @@ class Activity extends CI_Controller
             $data = array(
                 'text' => $question,
                 'activity_id' => $id
-            );
+                );
             $this->Activity_model->addQuestion($data);
         }
 
@@ -89,7 +90,7 @@ class Activity extends CI_Controller
         $data = array(
             'question_id' => $questionId,
             'text' => $answer
-        );
+            );
 
         $this->Activity_model->addAnswer($data);
 
@@ -115,5 +116,12 @@ class Activity extends CI_Controller
         $this->load->view('account/layout',$this->data);
     }
 
-
+    public function showEventDetails(){
+        $eventId = $_GET['eventId'];
+        if (!empty($eventId)) {
+            $data['event_details'] = $this->Activity_model->getEventDetails($eventId);
+            $data['gallery_photos'] = $this->Uploads_model->getPhotosById($eventId);
+            $this->load->view('account/activity/event_details', $data);
+        } 
+    }
 }
