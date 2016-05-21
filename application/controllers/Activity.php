@@ -97,7 +97,23 @@ class Activity extends CI_Controller
         $this->load->view('account/layout',$this->data);
 
     }
-    
+
+    public function ended()
+    {
+        $this->data['activities'] = $this->Activity_model->getEndedActivities();
+
+        $this->data['view']='activity/list_ended';
+        $this->load->view('account/layout',$this->data);
+
+    }
+
+    public function upcoming()
+    {
+        $this->data['activities'] = $this->Activity_model->getUpcomingActivities();
+
+        $this->data['view']='activity/list_upcoming';
+        $this->load->view('account/layout',$this->data);
+    }
 
 
 }
