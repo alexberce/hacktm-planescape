@@ -31,8 +31,6 @@ class Uploads_model extends CI_Model
 		$this->db->where('user_id', $this->user_id);
 		$files = $this->db->get($this->table_name);
 
-		print_r($files);die();
-
 		return $files->result();
 	}
 
@@ -95,7 +93,7 @@ class Uploads_model extends CI_Model
 				'user_id'         => $this->user_id,
 				"size"       => $file_data['file_size'],
 				"path"        => $path . '/' . $file_data['file_name'],
-				);
+
 			);
 
 		}

@@ -40,7 +40,7 @@
 
 <body class="nav-md">
 <?php $session_photo = $this->session->userdata('user_img');?>
-<?php echo  $user_user = isset($session_photo) ? $session_photo : "assets/images/user.png";?>
+<?php $user_user = isset($session_photo) ? $session_photo : "assets/images/user.png";?>
 <div class="container body">
 	<div class="main_container">
 		<div class="col-md-3 left_col">
