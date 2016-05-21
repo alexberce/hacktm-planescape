@@ -35,9 +35,7 @@
 	<!-- Bootstrap -->
 	<script src="<?=base_url()?>assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 
-	<link href='<?=base_url()?>assets/fonts/stylesheet.css' rel='stylesheet' type='text/css'>
-
-
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300&subset=latin,greek,cyrillic,greek-ext,latin-ext,vietnamese,cyrillic-ext' rel='stylesheet' type='text/css'>
 </head>
 
 <body class="nav-md">
