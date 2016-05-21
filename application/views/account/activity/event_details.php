@@ -1,10 +1,4 @@
 <?php
-
-$data['PAGE'] = $this->uri->segment(1);
-
-$this->load->view('account/header', $data);
-$this->load->view('account/sidebar', $data);
-
 if(is_array($event_details)){
 	foreach($event_details as $detail){ ?>
 	<div class="container">
@@ -74,10 +68,7 @@ if(is_array($event_details)){
 		</div>
 	</div>
 	<?php }
-} 
-
-
-$this->load->view('account/footer', $data);
+}
 
 
 

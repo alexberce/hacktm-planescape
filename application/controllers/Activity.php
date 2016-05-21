@@ -121,7 +121,8 @@ class Activity extends MY_Controller
 		if (!empty($eventId)) {
 			$data['event_details'] = $this->Activity_model->getEventDetails($eventId);
 			$data['gallery_photos'] = $this->Uploads_model->getPhotosById($eventId);
-			$this->load->view('account/activity/event_details', $data);
+			$data['view'] = 'activity/event_details';
+			$this->load->view('account/layout', $data);
 		}
 	}
 
