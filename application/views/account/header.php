@@ -52,11 +52,11 @@
 				<!-- menu profile quick info -->
 				<div class="profile">
 					<div class="profile_pic">
-						<img src="<?=base_url()?>assets/images/img.jpg" alt="..." class="img-circle profile_img">
+						<img src="<?=base_url().$this->session->userdata('user_img');?>" alt="..." class="img-circle profile_img">
 					</div>
 					<div class="profile_info">
 					<h1><?php //$this->session->userdata('username');?></h1>
-					<h2>John Doe</h2>
+					<h2><?php echo $this->session->userdata('username');?></h2>
 					</div>
 				</div>
 				<!-- /menu profile quick info -->
@@ -79,7 +79,7 @@
 									<i class="fa fa-bullhorn"></i> Upcoming Events </a>
 							</li>
 
-							<li><a href="<?=base_url()?>settings">
+							<li><a href="<?=base_url()?>invitation/add">
 									<i class="fa fa-send-o"></i> Invitations </a>
 							</li>
 

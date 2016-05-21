@@ -21,6 +21,7 @@ class Account extends CI_Controller
 					'username'        => $user['username'],
 					'email'           => $user['email'],
 					'id'              => $user['id'],
+					'user_img'        => $user['path'],
 					'loggedIn'        => true,
 				);
 
@@ -62,24 +63,6 @@ class Account extends CI_Controller
 			redirect('dashboard');
 		}
 
-		if ($this->form_validation->run() == true) {
-			$this->data = array(
-				'email'    => $email,
-				'username' => $username,
-				'password' => md5($password),
-			);
-			$this->Account_model->register($this->data);
-			$id = $this->db->insert_id();
-			$userdata = array(
-				'username' => $username,
-				'email'    => $email,
-				'id'       => $id,
-				'loggedIn' => true,
-			);
-			$this->session->set_userdata($userdata);
-			redirect('dashboard');
-
-		}
 		$this->data['view'] = 'register';
 		$this->load->view('account/auth/layout', $this->data);
 	}

@@ -11,5 +11,9 @@ function check_activity_form(){
 }
 
 $(function() {
-	$( "#datepicker" ).datepicker();
+	$( "#datepickerStart" ).datepicker();
+});
+
+$(function() {
+	$( "#datepickerEnd" ).datepicker();
 });

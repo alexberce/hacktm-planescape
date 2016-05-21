@@ -1,5 +1,10 @@
-.input{
+.input_text{
     width: 40% !important;
+    border-radius: 2px !important;
+}
+.input_date{
+    width: 38% !important;
+    border-radius: 2px;
 }
 .padding{
     padding:10px;
@@ -9,4 +14,19 @@
     border-radius: 2px;
     padding: 0;
     margin: 15px;
+}
+.button_activity{
+    background: #7CC576 !important;
+    color: #ECF0F1 !important;
+    padding: 8px;
+    border: 1px solid rgb(103, 192, 117) !important;
+    border-radius: 2px;
+}
+.input-group-addon{
+    background-color: #7CC576 !important;
+    border: 1px solid rgb(103, 192, 117) !important;
+    color: #ECF0F1 !important;
+}
+.textarea_activity{
+    resize: vertical;
 }
