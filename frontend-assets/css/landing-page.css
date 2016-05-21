@@ -35,7 +35,7 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../img/intro-bg.jpg) no-repeat center center;
+    background: url(../img/sea.jpg) no-repeat center center;
     background-size: cover;
 }
 
@@ -167,4 +167,97 @@ footer {
 
 p.copyright {
     margin: 15px 0 0;
+}
+
+.get-started-btn {
+    background-color: #67c075;
+    border-color: #67c075;
+    font-weight: 900;
+    color: white;
+}
+
+.tour-btn {
+      background: transparent;
+      color: white;
+      font-weight: 900;
+}
+
+.ps-img {
+    margin-top: 100px;
+    margin-left: -75px;
+}
+
+.features-row, .whatsnext-row {
+    background-color: rgb(103, 192, 117);
+}
+
+.title-head {
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.features, .whatsnext {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    font-weight: 900;
+}
+
+.faq {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+
+.feature-col {
+    text-align: center;
+    color: white;
+}
+
+.faq-col {
+    text-align: center;
+}
+
+.feature-col1, .faq-col1 {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.feature-col1-group, .faq-col1-group {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.faq-col1-group {
+    clear: both;
+}
+
+.faq-col1 {
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.clear {
+    clear: both;
+    width: 100%;
+}
+
+.whatsnext-col1-group {
+    padding: 20px;
+}
+
+.whatsnext-col1-group .lead {
+    font-size: 13px;
+    color: white;
+    text-align: center;
+}
+
+.copyright {
+    text-align: center;
+    color: white;
+}
+
+.footer {
+    background-color: grey;
 }
