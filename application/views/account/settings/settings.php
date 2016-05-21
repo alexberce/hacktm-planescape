@@ -5,8 +5,8 @@
 		<div class="col-md-3">
 			<div class="profile_img">
 				<div class="crop-avatar">
-					<div class="avatar-view">
-						<img src="<?= base_url() . $account_data['path'] ?>" height="200" alt="Avatar">
+					<div class="avatar-view" style="background-image: url(<?= base_url() . $account_data['path'] ?>)">
+						<img style="visibility: hidden;" src="<?= base_url() . $account_data['path'] ?>" height="250" alt="Avatar">
 					</div>
 				</div>
 			</div>
