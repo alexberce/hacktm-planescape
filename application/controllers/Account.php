@@ -38,12 +38,12 @@ class Account extends CI_Controller
 		$email = $this->input->post('email');
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		$r_password = $this->input->post('r_password');
+		$r_password = $this->input->post('retype-password');
 
-		$this->form_validation->set_rules('username', 'Username', 'required|unique[username.users]');
+		$this->form_validation->set_rules('username', 'Username', 'required|is_unique[users.username]');
 		$this->form_validation->set_rules('password', 'Password', 'required|md5');
-		$this->form_validation->set_rules('email', 'Email', 'required|md5|unique[]');
-		$this->form_validation->set_rules('r_password', 'Retype Password', 'required|md5|matches[password]');
+		$this->form_validation->set_rules('email', 'Email', 'required|md5|is_unique[users.email]');
+		$this->form_validation->set_rules('retype-password', 'Retype Password', 'required|md5|matches[password]');
 
 		if ($this->form_validation->run() == true) {
 			$this->data = array(
@@ -60,6 +60,7 @@ class Account extends CI_Controller
 				'loggedIn' => true,
 			);
 			$this->session->set_userdata($userdata);
+			redirect('dashboard');
 
 		}
 		$this->data['view'] = 'register';
