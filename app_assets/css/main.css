@@ -1,0 +1,42 @@
+body {
+    background: #fff;
+}
+
+.navbar.nav_title {
+    background: #7cc576;
+}
+
+.left_col {
+    background: #fff;
+}
+
+.nav.side-menu li {
+    border-left: 10px solid transparent;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid transparent;
+}
+
+.nav.side-menu li:last-child {
+    border-bottom: 1px solid #ccc;
+}
+
+.nav.side-menu> li.current-page, .nav.side-menu> li.active {
+    border-left: 10px solid #7cc576;
+    border-right: none;
+}
+
+.nav.side-menu> li.active > a {
+    background: #fff;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.nav.side-menu li a, .nav.side-menu li a:hover {
+    color: #3b3b3b !important;
+}
+
+.profile_info h2 {
+    font-size: 25px;
+    color: #525252;
+}
