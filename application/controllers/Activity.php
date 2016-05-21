@@ -11,7 +11,6 @@ class Activity extends CI_Controller
 
     public function index()
     {
-        echo $_GET; die();
         if(!empty($_GET['eventId'])){
 
             $this->load->view('account/activity/event_details',$this->data);
