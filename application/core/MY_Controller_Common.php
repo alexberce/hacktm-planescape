@@ -8,6 +8,7 @@
  */
 class MY_Controller_Common extends CI_Controller {
 	public $data;
+	public $account_data;
 
 	function __construct(){
 		parent::__construct();

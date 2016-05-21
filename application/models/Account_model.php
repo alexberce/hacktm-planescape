@@ -12,7 +12,9 @@ class Account_model extends CI_Model
 
 	public function getAccountData()
 	{
-		$query = $this->db->where('id', $this->user_id)->get($this->table_name);
+		$query = $this->db->where('users.id', $this->user_id)
+			->join('files', 'users.profile_picture = files.id')
+			->get($this->table_name);
 
 		return $query->row_array();
 	}

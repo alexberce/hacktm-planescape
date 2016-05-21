@@ -16,13 +16,12 @@ class Account extends CI_Controller
 		$this->form_validation->set_rules('password', 'Password', 'required|md5');
 		if ($this->form_validation->run() == true) {
 			$user = $this->Account_model->login($username, md5($password));
-
 			if ($user) {
 				$userdata = array(
-					'username' => $user['username'],
-					'email'    => $user['email'],
-					'id'       => $user['id'],
-					'loggedIn' => true,
+					'username'        => $user['username'],
+					'email'           => $user['email'],
+					'id'              => $user['id'],
+					'loggedIn'        => true,
 				);
 
 				$this->session->set_userdata($userdata);
@@ -45,23 +44,23 @@ class Account extends CI_Controller
 		$this->form_validation->set_rules('email', 'Email', 'required|md5|is_unique[users.email]');
 		$this->form_validation->set_rules('retype-password', 'Retype Password', 'required|md5|matches[password]');
 
-        if($this->form_validation->run() == true){
-            $this->data = array(
-                'email' => $email,
-                'username' => $username,
-                'password' => md5($password)
-            );
-            $this->Account_model->register($this->data);
-            $id = $this->db->insert_id();
-            $userdata = array(
-                'username' => $username,
-                'email' => $email,
-                'id' => $id,
-                'loggedIn' => true
-            );
-            $this->session->set_userdata($userdata);
-            redirect('dashboard');
-        }
+		if ($this->form_validation->run() == true) {
+			$this->data = array(
+				'email'    => $email,
+				'username' => $username,
+				'password' => md5($password),
+			);
+			$this->Account_model->register($this->data);
+			$id = $this->db->insert_id();
+			$userdata = array(
+				'username' => $username,
+				'email'    => $email,
+				'id'       => $id,
+				'loggedIn' => true,
+			);
+			$this->session->set_userdata($userdata);
+			redirect('dashboard');
+		}
 
 		if ($this->form_validation->run() == true) {
 			$this->data = array(
@@ -85,7 +84,8 @@ class Account extends CI_Controller
 		$this->load->view('account/auth/layout', $this->data);
 	}
 
-	function logout() {
+	function logout()
+	{
 		$this->session->sess_destroy();
 		redirect('');
 	}

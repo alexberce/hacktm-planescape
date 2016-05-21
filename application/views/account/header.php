@@ -24,6 +24,7 @@
 
 	<!-- Custom Theme Style -->
 	<link href="<?=base_url()?>assets/css/custom.css" rel="stylesheet">
+	<link href="<?=base_url()?>app_assets/css/main.css" rel="stylesheet">
 
 	<link href="<?=base_url();?>app_assets/css/activity.css" rel="stylesheet"/>
 
@@ -50,8 +51,8 @@
 						<img src="<?=base_url()?>assets/images/img.jpg" alt="..." class="img-circle profile_img">
 					</div>
 					<div class="profile_info">
-						<span>Welcome,</span>
-						<h2><?=$this->session->userdata('username');?></h2>
+					<h1><?php //$this->session->userdata('username');?></h1>
+					<h2>John Doe</h2>
 					</div>
 				</div>
 				<!-- /menu profile quick info -->
@@ -61,42 +62,43 @@
 				<!-- sidebar menu -->
 				<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 					<div class="menu_section">
-						<h3>MENU</h3>
+						<div class="clearfix"></div>
 						<ul class="nav side-menu">
 							<li><a href="<?=base_url()?>dashboard">
-									<i class="fa fa-laptop"></i> Dashboard </a>
+									<i class="fa fa-home"></i> Home Feed </a>
 							</li>
 							<li><a href="<?=base_url()?>activity/add">
-									<i class="fa fa-plus-circle"></i> Create Activity </a>
+									<i class="fa fa-calendar"></i> Create An Event </a>
 							</li>
-							<li><a href="<?=base_url()?>activity/">
-									<i class="fa fa-plus-circle"></i> Activities </a>
+
+							<li><a href="<?=base_url()?>activity/add">
+									<i class="fa fa-bullhorn"></i> Upcoming Events </a>
 							</li>
+
 							<li><a href="<?=base_url()?>settings">
-									<i class="fa fa-send-o"></i> Invite </a>
+									<i class="fa fa-send-o"></i> Invitations </a>
+							</li>
+
+							<li><a href="<?=base_url()?>activity/view">
+									<i class="fa fa-history"></i> Ended Events </a>
+							</li>
+
+							<li><a href="<?=base_url()?>activity/view">
+									<i class="fa fa-picture-o"></i> Galleries </a>
+							</li>
+
+							<li><a href="<?=base_url()?>settings">
+									<i class="fa fa-cogs"></i> Settings </a>
+							</li>
+
+							<li><a href="<?=base_url()?>account/logout">
+									<i class="fa fa-sign-out"></i> Logout </a>
 							</li>
 						</ul>
 					</div>
 
 				</div>
 				<!-- /sidebar menu -->
-
-				<!-- /menu footer buttons -->
-				<div class="sidebar-footer hidden-small">
-					<a href="<?=base_url()?>settings" data-toggle="tooltip" data-placement="top" title="Settings">
-						<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-					</a>
-					<a data-toggle="tooltip" data-placement="top" title="FullScreen">
-						<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-					</a>
-					<a data-toggle="tooltip" data-placement="top" title="Lock">
-						<span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-					</a>
-					<a href="<?=base_url()?>account/logout" data-toggle="tooltip" data-placement="top" title="Logout">
-						<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-					</a>
-				</div>
-				<!-- /menu footer buttons -->
 			</div>
 		</div>
 
