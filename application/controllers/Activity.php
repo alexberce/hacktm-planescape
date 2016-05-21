@@ -104,6 +104,7 @@ class Activity extends CI_Controller
         $this->load->view('account/layout',$this->data);
 
     }
+    
 
 
 }

@@ -39,6 +39,8 @@
 </head>
 
 <body class="nav-md">
+<?php $session_photo = $this->session->userdata('user_img');?>
+<?php echo  $user_user = isset($session_photo) ? $session_photo : "assets/images/user.png";?>
 <div class="container body">
 	<div class="main_container">
 		<div class="col-md-3 left_col">
@@ -52,7 +54,7 @@
 				<!-- menu profile quick info -->
 				<div class="profile">
 					<div class="profile_pic">
-						<img src="<?=base_url().$this->session->userdata('user_img');?>" alt="..." class="img-circle profile_img">
+						<img src="<?=base_url().$user_user;?>" alt="..." class="img-circle profile_img">
 					</div>
 					<div class="profile_info">
 					<h1><?php //$this->session->userdata('username');?></h1>
@@ -123,7 +125,8 @@
 						<li class="">
 							<a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
 							   aria-expanded="false">
-								<img src="<?=base_url()?>assets/images/img.jpg" alt=""><?=$this->session->userdata('username');?>
+
+								<img src="<?=base_url().$user_user;?>" alt=""><?=$this->session->userdata('username');?>
 								<span class=" fa fa-angle-down"></span>
 							</a>
 							<ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -150,7 +153,7 @@
 								<li>
 									<a>
                         <span class="image">
-                                          <img src="<?=base_url()?>assets/images/img.jpg" alt="Profile Image"/>
+                                          <img src="<?=base_url().$user_user;?>" alt="Profile Image"/>
                                       </span>
                         <span>
                                           <span><?=$this->session->userdata('username');?></span>
@@ -164,7 +167,7 @@
 								<li>
 									<a>
                         <span class="image">
-                                          <img src="<?=base_url()?>assets/images/img.jpg" alt="Profile Image"/>
+                                          <img src="<?=base_url().$user_user;?>" alt="Profile Image"/>
                                       </span>
                         <span>
                                           <span><?=$this->session->userdata('username');?></span>
@@ -178,7 +181,7 @@
 								<li>
 									<a>
                         <span class="image">
-                                          <img src="<?=base_url()?>assets/images/img.jpg" alt="Profile Image"/>
+                                          <img src="<?=base_url().$user_user;?>" alt="Profile Image"/>
                                       </span>
                         <span>
                                           <span><?=$this->session->userdata('username');?></span>
@@ -192,7 +195,7 @@
 								<li>
 									<a>
                         <span class="image">
-                                          <img src="<?=base_url()?>assets/images/img.jpg" alt="Profile Image"/>
+                                          <img src="<?=base_url().$user_user;?>" alt="Profile Image"/>
                                       </span>
                         <span>
                                           <span><?=$this->session->userdata('username');?></span>

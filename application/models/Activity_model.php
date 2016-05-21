@@ -21,6 +21,21 @@ class Activity_model extends CI_Model
 
     }
 
+    public function getEndedActivities()
+    {
+        $date = date('Y-m-d');
+        $this->db->select('activity.*,files.path');
+        $this->db->from('activity');
+        $this->db->join('files','files.id = activity.cover');
+        $this->db->where('activity.user_id',$this->user_id);
+        $this->db->where('activity.end_date < ',$date);
+
+        $query = $this->db->get();
+
+        return $query->result_array();
+
+    }
+
     public function getActivity($id)
     {
         $this->db->select('activity.*,questions.*,question_answers.*,files.path');
