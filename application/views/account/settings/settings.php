@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="<?= base_url() ?>app_assets/css/settings.css"/>
-<form action="<?= base_url() ?>settings/index" name="settings_form" id="settings_form"
+<form method="POST" action="<?= base_url() ?>settings/index" name="settings_form" id="settings_form"
 	  onsubmit="return check_settings_form()">
 	<div class="col-md-12 form-group">
 		<div class="col-md-12 padding item form-group">

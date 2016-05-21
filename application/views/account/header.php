@@ -69,7 +69,7 @@
 									<i class="fa fa-plus-circle"></i> Activities </a>
 							</li>
 							<li><a href="<?=base_url()?>settings">
-									<i class="fa fa-plus-circle"></i> Settings </a>
+									<i class="fa fa-send-o"></i> Invite </a>
 							</li>
 						</ul>
 					</div>
