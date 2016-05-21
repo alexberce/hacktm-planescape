@@ -19,11 +19,15 @@ class Account_model extends CI_Model
 
 	public function editAccountData()
 	{
+		$ids = $this->uploads->upload_file(true);
 		$data = array(
 			'first_name' => $this->input->post('settings_first_name'),
 			'last_name'  => $this->input->post('settings_last_name'),
 			'email'      => $this->input->post('settings_email'),
 		);
+
+		if (is_numeric($ids))
+			$data['profile_picture'] = $ids;
 
 		$this->db->where('id', $this->user_id)->update($this->table_name, $data);
 	}

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="<?= base_url() ?>app_assets/css/settings.css"/>
 <form method="POST" action="<?= base_url() ?>settings/index" name="settings_form" id="settings_form"
-	  onsubmit="return check_settings_form()">
+	  onsubmit="return check_settings_form()" enctype="multipart/form-data">
 	<div class="col-md-12 form-group">
 		<div class="col-md-12 padding item form-group">
 			<input class="input form-control" name="settings_first_name" id="settings_first_name" placeholder="First Name" type="text"
@@ -18,7 +18,7 @@
 		</div>
 
 		<div class=" col-md-12 padding item form-group">
-			<input class="input form-control" name="settings_profile_picture" id="settings_profile_picture" placeholder="Profile Picture"
+			<input class="input form-control" name="files" id="settings_profile_picture" placeholder="Profile Picture"
 				   type="file"/>
 		</div>
 

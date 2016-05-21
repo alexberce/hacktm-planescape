@@ -12,6 +12,7 @@ class Settings extends MY_Controller
 	{
 		parent::__construct();
 		$this->load->model('Account_model', 'account');
+		$this->load->model('Uploads_model', 'uploads');
 		$this->user_id = $this->session->userdata('id');
 	}
 
