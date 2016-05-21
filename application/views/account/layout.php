@@ -58,7 +58,7 @@ foreach ($activities as $activity) {
 				<div class="ended-events-bottom">
 					<div class="ended-events-date">
 						<div class="ended-events-date-day">
-							<?php echo date("d", strtotime($endedEvent['date'])); ?>
+							<?php echo intval(date("d", strtotime($endedEvent['date']))); ?>
 						</div>
 						<div class="ended-events-date-month">
 							<?php echo date("M", strtotime($endedEvent['date'])); ?>
