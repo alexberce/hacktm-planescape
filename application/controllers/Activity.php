@@ -13,7 +13,7 @@ class Activity extends CI_Controller
     {
 
         $this->data['view']='dashboard';
-        $this->load->view('activity/layout',$this->data);
+        $this->load->view('account/layout',$this->data);
     }
 
     public function add()

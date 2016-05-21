@@ -6,7 +6,7 @@
  * Date: 5/21/2016
  * Time: 00:06
  */
-class Dashboard extends MY_Controller_Common
+class Dashboard extends MY_Controller
 {
 	public function __construct()
 	{

@@ -19,14 +19,16 @@ class MY_Controller_Common extends CI_Controller {
 		# @Types
 		#	1=> redirect
 		#	2=> return true or false
+		$user_id = $this->session->userdata('id');
+
 		if ($type == 1)
 		{
-			if(!isset($this->session->userdata('userdata')->id))
+			if(!$user_id)
 				redirect('account/login');
 		}
 		else if ($type == 2)
 		{
-			if(isset($this->session->userdata('userdata')->id))
+			if($user_id)
 				return true;
 			else
 				return false;
