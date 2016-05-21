@@ -9,3 +9,7 @@ function check_activity_form(){
 
 	return form_ok;
 }
+
+$(function() {
+	$( "#datepicker" ).datepicker();
+});

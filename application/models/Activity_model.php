@@ -10,13 +10,14 @@ class Activity_model extends CI_Model
 
     public function getActivities()
     {
-        $this->db->select('*');
+        $this->db->select('activity.*,files.path');
         $this->db->from('activity');
-        $this->db->where('user_id',$this->user_id);
+        $this->db->join('files','files.id = activity.cover');
+        $this->db->where('activity.user_id',$this->user_id);
 
         $query = $this->db->get();
 
-        return $query->results();
+        return $query->result_array();
 
     }
 
@@ -30,7 +31,7 @@ class Activity_model extends CI_Model
 
         $query = $this->db->get();
 
-        return $query->results();
+        return $query->result_array();
 
     }
 

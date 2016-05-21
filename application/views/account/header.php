@@ -20,8 +20,12 @@
 	<!-- jVectorMap -->
 	<link href="<?=base_url()?>assets/css/maps/jquery-jvectormap-2.0.3.css" rel="stylesheet"/>
 
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
 	<!-- Custom Theme Style -->
 	<link href="<?=base_url()?>assets/css/custom.css" rel="stylesheet">
+
+	<link href="<?=base_url();?>app_assets/css/activity.css" rel="stylesheet"/>
 
 	<!-- jQuery -->
 	<script src="<?=base_url()?>assets/vendors/jquery/dist/jquery.min.js"></script>
@@ -65,7 +69,7 @@
 							<li><a href="<?=base_url()?>activity/add">
 									<i class="fa fa-plus-circle"></i> Create Activity </a>
 							</li>
-							<li><a href="<?=base_url()?>activity/view">
+							<li><a href="<?=base_url()?>activity/">
 									<i class="fa fa-plus-circle"></i> Activities </a>
 							</li>
 							<li><a href="<?=base_url()?>settings">

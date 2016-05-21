@@ -43,6 +43,8 @@
 <script src="<?=base_url()?>assets/js/moment/moment.min.js"></script>
 <script src="<?=base_url()?>assets/js/datepicker/daterangepicker.js"></script>
 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
 <!-- Custom Theme Scripts -->
 <script src="<?=base_url()?>assets/js/custom.js"></script>
 </body>

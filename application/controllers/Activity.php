@@ -12,22 +12,32 @@ class Activity extends CI_Controller
     public function index()
     {
         $this->data['activities'] = $this->Activity_model->getActivities();
-        $this->data['view']='dashboard';
+        $this->data['view']='activity/list';
         $this->load->view('account/layout',$this->data);
     }
 
     public function add()
     {
+
         $title = $this->input->post('title');
         $description = $this->input->post('description');
+        $date = $this->input->post('date');
+
+        $date = str_replace('/', '-', $date);
+        $date = date('Y-m-d',strtotime($date));
 
         $this->form_validation->set_rules('title', 'Title', 'required');
+        $this->form_validation->set_rules('date', 'Date', 'required');
 
         if ($this->form_validation->run() == true) {
+            $this->load->model('Uploads_model');
+            $file = $this->Uploads_model->upload_file(true);
             $data = array(
                 'title' => $title,
                 'description' => $description,
-                'user_id' => $this->user_id
+                'user_id' => $this->user_id,
+                'cover' => $file,
+                'date' => $date
             );
 
             $this->Activity_model->addActivity($data);

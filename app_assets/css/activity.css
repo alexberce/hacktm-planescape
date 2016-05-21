@@ -4,3 +4,9 @@
 .padding{
     padding:10px;
 }
+.activity_border{
+    border:1px solid #2A3F54 !important;
+    border-radius: 2px;
+    padding: 0;
+    margin: 15px;
+}

@@ -78,6 +78,7 @@ class Uploads_model extends CI_Model
 				"size"  => $file_data['file_size'],
 				"error" => strip_tags($this->upload->display_errors()),
 			);
+
 		} else {
 			$file_data = $this->upload->data();
 
