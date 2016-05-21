@@ -70,9 +70,9 @@ class Activity_model extends CI_Model
     {
         $this->db->select('activity.*,questions.*,question_answers.*,files.path');
         $this->db->from('activity');
-        $this->db->join('questions','questions.activity_id = activity.id');
-        $this->db->join('question_answers','question_answers.question_id = questions.id');
-        $this->db->join('files','activity.id = files.id');
+        $this->db->join('questions','questions.activity_id = activity.id','left');
+        $this->db->join('question_answers','question_answers.question_id = questions.id','left');
+        $this->db->join('files','activity.id = files.id','left');
         $this->db->where('activity.id',$id);
 
         $query = $this->db->get();

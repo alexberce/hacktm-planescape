@@ -102,5 +102,6 @@ class MY_Controller_Common extends CI_Controller
 		} else {
 			$data["message"] = "Message sent correctly!";
 		}
+		return $data;
 	}
 }

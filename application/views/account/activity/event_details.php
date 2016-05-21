@@ -1,16 +1,9 @@
 <?php
-// $data = array();
-
-$data['PAGE'] = $this->uri->segment(1);
-
-$this->load->view('account/header', $data);
-$this->load->view('account/sidebar', $data);
-$this->load->view('account/' . $view, $data);
 if(is_array($event_details)){
 	foreach($event_details as $detail){ ?>
 	<div class="container">
 		<div class="photo">
-			<img class="event-photo" src="<?php base_url(); ?>assets/images/activity.jpg" />
+			<img class="event-photo" src="<?php echo base_url(); ?>assets/images/activity.jpg" />
 		</div>
 
 		<div class="event-details">
@@ -75,10 +68,7 @@ if(is_array($event_details)){
 		</div>
 	</div>
 	<?php }
-} 
-
-
-$this->load->view('account/footer', $data);
+}
 
 
 

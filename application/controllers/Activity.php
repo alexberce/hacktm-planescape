@@ -1,11 +1,12 @@
 <?php
 
-class Activity extends CI_Controller
+class Activity extends MY_Controller
 {
     public function __construct()
     {
         parent::__construct();
         $this->load->model('Activity_model');
+        $this->load->model('Uploads_model');
         $this->user_id = $this->session->userdata('id');
     }
 
@@ -44,7 +45,7 @@ class Activity extends CI_Controller
                 'cover' => $file,
                 'date' => $start_date,
                 'end_date' => $end_date
-            );
+                );
 
             $this->Activity_model->addActivity($data);
             redirect('dashboard');
@@ -53,15 +54,6 @@ class Activity extends CI_Controller
         $this->data['view']='activity/add';
         $this->load->view('account/layout',$this->data);
 
-
-    }
-
-    public function view($id)
-    {
-        $this->data['activity'] = $this->Activity_model->getActivity($id);
-
-        $this->data['view']='activity/view';
-        $this->load->view('account/layout',$this->data);
 
     }
 
@@ -75,7 +67,7 @@ class Activity extends CI_Controller
             $data = array(
                 'text' => $question,
                 'activity_id' => $id
-            );
+                );
             $this->Activity_model->addQuestion($data);
         }
 
@@ -89,7 +81,7 @@ class Activity extends CI_Controller
         $data = array(
             'question_id' => $questionId,
             'text' => $answer
-        );
+            );
 
         $this->Activity_model->addAnswer($data);
 
@@ -115,5 +107,24 @@ class Activity extends CI_Controller
         $this->load->view('account/layout',$this->data);
     }
 
+	public function view($eventId){
+		if (!empty($eventId)) {
+			$data['event_details'] = $this->Activity_model->getEventDetails($eventId);
+			$data['gallery_photos'] = $this->Uploads_model->getPhotosById($eventId);
+			$data['view'] = 'activity/event_details';
+			$this->load->view('account/layout', $data);
+		}
+	}
 
+	public function invite_friend(){
+		$this->data['activity'] = current($this->Activity_model->getActivity(20));
+
+		$this->data['activity_owner'] = $this->session->userdata('username');
+		$email_address = $this->input->post('friend_email');
+		$subject = 'You\'ve been invited to an event';
+		$text = $this->load->view('messages/emails/invitation', $this->data, true);
+		$this->send_mail($email_address, $subject, $text);
+
+		redirect('activity/upcoming');
+	}
 }

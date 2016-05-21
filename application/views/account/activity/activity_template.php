@@ -6,7 +6,7 @@
 }?>
 <div class="all-<?php echo $class;?>-event" >
     <div class="ended-events-top">
-        <a href="<?php base_url(); ?>dashboard?eventId=<?php echo $activity['id']?>"><img src="<?php echo  base_url() .$activity['path'] ; ?>"></a>
+        <a href="<?php base_url(); ?>activity/view/<?php echo $activity['id']?>"><img src="<?php echo  base_url() .$activity['path'] ; ?>"></a>
     </div>
     <div class="<?php echo $class;?>-events-bottom">
         <div class="<?php echo $class;?>-events-date">
