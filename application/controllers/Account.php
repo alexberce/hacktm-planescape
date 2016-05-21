@@ -26,6 +26,7 @@ class Account extends CI_Controller
 				);
 
 				$this->session->set_userdata($userdata);
+
 				redirect('dashboard');
 			}
 		}
