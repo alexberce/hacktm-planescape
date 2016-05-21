@@ -14,7 +14,6 @@ class Activity_model extends CI_Model
         $this->db->from('activity');
         $this->db->join('files','files.id = activity.cover');
         $this->db->where('activity.user_id',$this->user_id);
-
         $query = $this->db->get();
 
         return $query->result_array();
@@ -36,20 +35,6 @@ class Activity_model extends CI_Model
 
     }
 
-    public function getUpcomingActivities()
-    {
-        $date = date('Y-m-d');
-        $this->db->select('activity.*,files.path');
-        $this->db->from('activity');
-        $this->db->join('files','files.id = activity.cover');
-        $this->db->where('activity.user_id',$this->user_id);
-        $this->db->where('activity.date > ',$date);
-
-        $query = $this->db->get();
-
-        return $query->result_array();
-    }
-
     public function getOpenActivities()
     {
         $date = date('Y-m-d');
@@ -64,6 +49,20 @@ class Activity_model extends CI_Model
 
         return $query->result_array();
 
+    }
+
+    public function getUpcomingActivities()
+    {
+        $date = date('Y-m-d');
+        $this->db->select('activity.*,files.path');
+        $this->db->from('activity');
+        $this->db->join('files','files.id = activity.cover');
+        $this->db->where('activity.user_id',$this->user_id);
+        $this->db->where('activity.date > ',$date);
+
+        $query = $this->db->get();
+
+        return $query->result_array();
     }
 
     public function getActivity($id)
@@ -83,10 +82,10 @@ class Activity_model extends CI_Model
 
     public function getEventDetails($id)
     {
-        $this->db->select('activity.*');
+        $this->db->select('activity.*,files.path');
         $this->db->from('activity');
         $this->db->where('activity.id',$id);
-
+        $this->db->join('files','activity.cover = files.id','left');
         $query = $this->db->get();
 
         return $query->result_array();

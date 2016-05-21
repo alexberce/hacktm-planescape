@@ -21,7 +21,7 @@ class Activity extends MY_Controller
     public function add()
     {
         $title = $this->input->post('title');
-        $description = $this->input->post('description');
+        $description = nl2br($this->input->post('description'));
         $start_date = $this->input->post('start_date');
         $end_date = $this->input->post('end_date');
 
@@ -116,8 +116,8 @@ class Activity extends MY_Controller
 		}
 	}
 
-	public function invite_friend(){
-		$this->data['activity'] = current($this->Activity_model->getActivity(20));
+	public function invite_friend($id){
+		$this->data['activity'] = current($this->Activity_model->getActivity($id));
 
 		$this->data['activity_owner'] = $this->session->userdata('username');
 		$email_address = $this->input->post('friend_email');
@@ -125,6 +125,6 @@ class Activity extends MY_Controller
 		$text = $this->load->view('messages/emails/invitation', $this->data, true);
 		$this->send_mail($email_address, $subject, $text);
 
-		redirect('activity/upcoming');
+		redirect('activity/view/' . $id);
 	}
 }

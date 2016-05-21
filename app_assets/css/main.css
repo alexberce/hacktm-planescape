@@ -39,6 +39,7 @@ body {
 .profile_info h2 {
     font-size: 25px;
     color: #525252;
+    font-weight: 700;
 }
 
 .nav-sm .nav.side-menu {
@@ -54,4 +55,25 @@ body {
     max-height: 56px;
     min-width: 56px;
     min-height: 56px;
+}
+
+.green-background {
+    background: #7CC576;
+}
+
+.container {
+    font-family: Open Sans;
+}
+
+.event-container {
+    margin-top: 10px;
+}
+
+.event-container .photo {
+    background-size: cover;
+    background-position: 50% 70%;
+}
+
+.event-container .photo img {
+    visibility: hidden;
 }

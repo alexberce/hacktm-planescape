@@ -1,32 +1,55 @@
-.input_text{
+.input_text {
     width: 40% !important;
     border-radius: 2px !important;
 }
-.input_date{
+
+.input_date {
     width: 38% !important;
     border-radius: 2px;
 }
-.padding{
-    padding:10px;
+
+.padding {
+    padding: 10px;
 }
-.activity_border{
-    border:1px solid #2A3F54 !important;
+
+.activity_border {
+    border: 1px solid #2A3F54 !important;
     border-radius: 2px;
     padding: 0;
     margin: 15px;
 }
-.button_activity{
+
+.button_activity {
     background: #7CC576 !important;
     color: #ECF0F1 !important;
     padding: 8px;
     border: 1px solid rgb(103, 192, 117) !important;
     border-radius: 2px;
 }
-.input-group-addon{
+
+.input-group-addon {
     background-color: #7CC576 !important;
     border: 1px solid rgb(103, 192, 117) !important;
     color: #ECF0F1 !important;
 }
-.textarea_activity{
+
+.textarea_activity {
     resize: vertical;
+}
+
+.event-invite-section {
+    background: #fff;
+    margin-bottom: 20px;
+}
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #6B6865;
+    margin-left: 30px;
+    margin-top: 0;
+}
+
+.event-invite-section-content {
+    margin: 20px;
+    margin-top: 10px;
 }
