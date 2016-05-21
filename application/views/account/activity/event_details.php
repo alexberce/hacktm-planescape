@@ -31,13 +31,17 @@ if(is_array($event_details)){
 				</div>
 
 				<div class="event-row">
+					<?php if(!empty($detail['address'])) { ?>
 					<div class="event-address">
 						<i class="fa fa-lg fa-map event-map-icon" aria-hidden="true"></i><?php echo $detail['address']; ?>
 					</div>
+					<?php } ?>
 
+					<?php if(!empty($detail['votes'])) { ?>
 					<div class="event-income">
 						<i class="fa fa-lg fa-users event-users-icon" aria-hidden="true"></i><?php echo $detail['votes'].' Will be there.'; ?>
 					</div>
+					<?php } ?>
 				</div>
 			</div>
 
@@ -45,13 +49,16 @@ if(is_array($event_details)){
 		</div>
 
 		<div class="event-content">
+			<?php if(!empty($detail['description'])) { ?>
 			<div class="event-content-title">
 				Description
 			</div>
 			<div class="event-content-description">
 				<?php echo $detail['description'];?>
 			</div>
+			<?php } ?>
 
+			<?php if(!empty($gallery_photos)) { ?>
 			<div class="event-gallery">
 				<div class="event-gallery-title">
 					Gallery
@@ -64,6 +71,7 @@ if(is_array($event_details)){
 					<?php } ?>
 				</div>
 			</div>
+			<?php } ?>
 		</div>
 	</div>
 	<?php }
