@@ -36,8 +36,9 @@ class Account_model extends CI_Model
 
 	public function login($username, $password)
 	{
-		$this->db->select('*');
+		$this->db->select('users.*,files.path');
 		$this->db->from('users');
+		$this->db->join('files', 'users.profile_picture = files.id');
 		$this->db->where('username', $username);
 		$this->db->where('password', $password);
 		$this->db->or_where('email', $username);

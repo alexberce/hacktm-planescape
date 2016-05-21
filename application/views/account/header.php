@@ -44,7 +44,7 @@
 		<div class="col-md-3 left_col">
 			<div class="left_col scroll-view">
 				<div class="navbar nav_title" style="border: 0;">
-					<a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>PlanEscape</span></a>
+					<a href="index.html" class="site_title"><img src="<?=base_url()?>app_assets/images/logo.png" /></a>
 				</div>
 
 				<div class="clearfix"></div>
@@ -52,11 +52,11 @@
 				<!-- menu profile quick info -->
 				<div class="profile">
 					<div class="profile_pic">
-						<img src="<?=base_url()?>assets/images/img.jpg" alt="..." class="img-circle profile_img">
+						<img src="<?=base_url().$this->session->userdata('user_img');?>" alt="..." class="img-circle profile_img">
 					</div>
 					<div class="profile_info">
 					<h1><?php //$this->session->userdata('username');?></h1>
-					<h2>John Doe</h2>
+					<h2><?=ucfirst($this->session->userdata('username'));?></h2>
 					</div>
 				</div>
 				<!-- /menu profile quick info -->
@@ -75,16 +75,16 @@
 									<i class="fa fa-calendar"></i> Create An Event </a>
 							</li>
 
-							<li><a href="<?=base_url()?>activity/add">
+							<li><a href="<?=base_url()?>activity/upcoming">
 									<i class="fa fa-bullhorn"></i> Upcoming Events </a>
 							</li>
 
-							<li><a href="<?=base_url()?>settings">
-									<i class="fa fa-send-o"></i> Invitations </a>
+							<li><a href="<?=base_url()?>activity/ended">
+									<i class="fa fa-history"></i> Ended Events </a>
 							</li>
 
-							<li><a href="<?=base_url()?>activity/view">
-									<i class="fa fa-history"></i> Ended Events </a>
+							<li><a href="<?=base_url()?>invitation/add">
+									<i class="fa fa-send-o"></i> Invitations </a>
 							</li>
 
 							<li><a href="<?=base_url()?>activity/">

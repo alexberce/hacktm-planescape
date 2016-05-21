@@ -48,3 +48,8 @@ body {
 .nav-sm .nav.side-menu li {
     border: none;
 }
+
+.img-circle.profile_img {
+    max-width: 56px;
+    max-height: 56px;
+}

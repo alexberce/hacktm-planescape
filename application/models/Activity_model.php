@@ -52,4 +52,14 @@ class Activity_model extends CI_Model
     {
         $this->db->insert('activity',$data);
     }
+
+    public function addQuestion($data)
+    {
+        $this->db->insert('questions',$data);
+    }
+
+    public function addAnswer($data)
+    {
+        $this->db->insert('question_answer',$data);
+    }
 }

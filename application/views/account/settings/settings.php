@@ -6,7 +6,7 @@
 			<div class="profile_img">
 				<div class="crop-avatar">
 					<div class="avatar-view">
-						<img src="<?= base_url() . $account_data['path'] ?>" alt="Avatar">
+						<img src="<?= base_url() . $account_data['path'] ?>" height="200" alt="Avatar">
 					</div>
 				</div>
 			</div>
@@ -37,8 +37,8 @@
 					   type="file"/>
 			</div>
 
-			<div class=" col-md-12 padding">
-				<input id="activity_add" class="input btn btn-primary" name="submit" type="submit" value="Save"/>
+			<div class="col-md-12 padding">
+				<input id="activity_add" class="input button_activity" name="submit" type="submit" value="Save"/>
 			</div>
 		</div>
 	</div>
