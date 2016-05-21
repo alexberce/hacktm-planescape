@@ -56,7 +56,7 @@
 					</div>
 					<div class="profile_info">
 					<h1><?php //$this->session->userdata('username');?></h1>
-					<h2><?php echo $this->session->userdata('username');?></h2>
+					<h2><?=ucfirst($this->session->userdata('username'));?></h2>
 					</div>
 				</div>
 				<!-- /menu profile quick info -->
