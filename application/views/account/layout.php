@@ -34,7 +34,7 @@ if(is_array($activities)){
 	<?php foreach ($upcomingEvents as $upcomingEvent) { ?>
 	<div class="all-upcoming-event">
 		<div class="upcoming-events-top">
-			<a href="<?php base_url(); ?>account/layout?eventId=<?php echo $upcomingEvent['id']?>"><img src="<?php base_url(); ?>assets/images/activity.jpg"><a/>
+			<a href="<?php base_url(); ?>dashboard?eventId=<?php echo $upcomingEvent['id']?>"><img src="<?php base_url(); ?>assets/images/activity.jpg"><a/>
 			</div>
 			<div class="upcoming-events-bottom">
 				<div class="upcoming-events-date">

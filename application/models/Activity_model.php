@@ -26,8 +26,20 @@ class Activity_model extends CI_Model
         $this->db->select('activity.*,questions.*,question_answers.*,files.path');
         $this->db->from('activity');
         $this->db->join('questions','questions.activity_id = activity.id');
-        $this->db->join('question_answers','question_answers.id = question_answers.question_id');
-        $this->db->join('files','activity.id = files.activity_id');
+        $this->db->join('question_answers','question_answers.question_id = questions.id');
+        $this->db->join('files','activity.id = files.id');
+        $this->db->where('activity.id',$id);
+
+        $query = $this->db->get();
+
+        return $query->result_array();
+
+    }
+
+    public function getEventDetails($id)
+    {
+        $this->db->select('activity.*');
+        $this->db->from('activity');
         $this->db->where('activity.id',$id);
 
         $query = $this->db->get();

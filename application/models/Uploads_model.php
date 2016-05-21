@@ -68,7 +68,7 @@ class Uploads_model extends CI_Model
 			'max_size'      => 1024 * 50,
 //                'file_name' => ''
 			'encrypt_name'  => true,
-		);
+			);
 
 		$this->load->library('upload', $config);
 
@@ -79,7 +79,7 @@ class Uploads_model extends CI_Model
 				"name"  => $file_data['file_name'],
 				"size"  => $file_data['file_size'],
 				"error" => strip_tags($this->upload->display_errors()),
-			);
+				);
 
 		} else {
 			$file_data = $this->upload->data();
@@ -89,13 +89,13 @@ class Uploads_model extends CI_Model
 				"size"         => $file_data['file_size'],
 				"url"          => $path . '/' . $file_data['file_name'],
 				"thumbnailUrl" => $path . '/' . $file_data['file_name'],
-			);
+				);
 
 			$good_files[] = array(
 				'user_id'         => $this->user_id,
 				"size"       => $file_data['file_size'],
 				"path"        => $path . '/' . $file_data['file_name'],
-			);
+				);
 		}
 
 		if (count($good_files))
@@ -103,5 +103,16 @@ class Uploads_model extends CI_Model
 		if ($return == true)
 			return $ids;
 		echo json_encode($data);
+	}
+
+	function getPhotosById($id) 
+	{
+		$this->db->select('files.*');
+		$this->db->from('files');
+		$this->db->where('files.activity_id', $id);
+
+		$query = $this->db->get();
+
+		return $query->result_array();
 	}
 }

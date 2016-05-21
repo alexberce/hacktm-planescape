@@ -403,3 +403,108 @@
 		text-align: center;
 	}
 
+	.event-photo {
+		width: 100%;
+		height: 245px;
+	}
+
+	.event-date {
+		float: left;
+		text-align: center;
+		border-right: 1px solid #ccc;
+		padding-right: 15px;
+		font-family: Open Sans;
+		margin-right: 20px;
+	}
+
+	.event-details {
+		width: 100%;
+		border: 4px solid rgb(255, 255, 255);
+		background-color: white;
+		padding: 10px;
+		border-bottom: 1px solid #ccc;
+	}
+
+	.event-date-month, .event-date-day{
+		color: rgb(103, 192, 117);
+	}
+
+	.event-date-day {
+		font-size: 40px;
+		font-weight: bold;
+	}
+
+	.event-date-month {
+		font-size: 20px;
+		font-weight: 900;
+	}
+
+	.event-title {
+		color: black;
+		font-size: 30px;
+		margin-left: 25px;
+		width: 100%;
+		margin-bottom: 3px;
+		margin-top: 10px;
+		font-weight: 900;
+		text-align: left;
+	}
+
+	.event-address, .event-income {
+		display: inline-block;
+		font-size: 14px;
+		color: black;
+	}
+
+	.event-map-icon, .event-users-icon{
+		margin-right: 5px;
+		margin-left: 20px;
+		color: black;
+	}
+
+	.event-address {
+		margin-right: 20px;
+		color: black;
+	}
+
+	.event-content, .event-gallery-content {
+		background-color: white;
+		padding: 40px;
+	}
+
+	.event-content-title {
+		font-size: 20px;
+		font-weight: bold;
+		color: black;
+	}
+
+	.event-content-description {
+		font-size: 13px;
+		color: black;
+		margin-top: 5px;
+		margin-left: 25px;
+	}
+
+	.event-gallery-title {
+		font-size: 20px;
+		font-weight: bold;
+		color: black;
+		border-color: white;
+		margin-top: 25px;
+		border-top: 1px solid #ccc;
+		padding-top: 25px;
+	}
+
+	.event-gallery-photo {
+		height: 150px;
+		width: 150px;
+	}
+
+	.event-gallery-content-photo {
+		display: inline-block;
+		margin-right: 10px;
+	}
+
+	.event-content {
+		border-bottom: 1px solid #ccc;
+	}
