@@ -2,9 +2,16 @@
 
 class Account_model extends CI_Model
 {
+    private $table_name = 'users';
     public function __construct()
     {
         parent::__construct();
+        $this->user_id = $this->session->userdata('id');
+    }
+
+    public function getAccountData(){
+        $query = $this->db->where('id', $this->user_id)->get($this->table_name);
+        return $query->row_array();
     }
 
     public function login($username, $password)

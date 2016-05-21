@@ -11,11 +11,12 @@ class Settings extends MY_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Account_model');
+		$this->load->model('Account_model', 'account');
 		$this->user_id = $this->session->userdata('id');
 	}
 
 	public function index(){
+		$this->data['account_data'] = $this->account->getAccountData();
 		$this->data['view']='settings/settings';
 		$this->load->view('account/layout',$this->data);
 	}

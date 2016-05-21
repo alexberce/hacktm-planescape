@@ -68,7 +68,7 @@
 							<li><a href="<?=base_url()?>activity/view">
 									<i class="fa fa-plus-circle"></i> Activities </a>
 							</li>
-							<li><a href="<?=base_url()?>activity/view">
+							<li><a href="<?=base_url()?>settings">
 									<i class="fa fa-plus-circle"></i> Settings </a>
 							</li>
 						</ul>
@@ -79,7 +79,7 @@
 
 				<!-- /menu footer buttons -->
 				<div class="sidebar-footer hidden-small">
-					<a data-toggle="tooltip" data-placement="top" title="Settings">
+					<a href="<?=base_url()?>settings" data-toggle="tooltip" data-placement="top" title="Settings">
 						<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
 					</a>
 					<a data-toggle="tooltip" data-placement="top" title="FullScreen">
@@ -113,11 +113,8 @@
 								<span class=" fa fa-angle-down"></span>
 							</a>
 							<ul class="dropdown-menu dropdown-usermenu pull-right">
-								<li><a href="javascript:;"> Profile</a>
-								</li>
 								<li>
-									<a href="javascript:;">
-										<span class="badge bg-red pull-right">50%</span>
+									<a href="<?=base_url()?>settings">
 										<span>Settings</span>
 									</a>
 								</li>
