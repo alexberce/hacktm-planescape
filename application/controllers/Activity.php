@@ -57,15 +57,6 @@ class Activity extends MY_Controller
 
     }
 
-    public function view($id)
-    {
-        $this->data['activity'] = $this->Activity_model->getActivity($id);
-
-        $this->data['view']='activity/view';
-        $this->load->view('account/layout',$this->data);
-
-    }
-
     public function question($id)
     {
         $question = $this->input->post('question');
@@ -116,8 +107,7 @@ class Activity extends MY_Controller
         $this->load->view('account/layout',$this->data);
     }
 
-	public function showEventDetails(){
-		$eventId = $_GET['eventId'];
+	public function view($eventId){
 		if (!empty($eventId)) {
 			$data['event_details'] = $this->Activity_model->getEventDetails($eventId);
 			$data['gallery_photos'] = $this->Uploads_model->getPhotosById($eventId);
