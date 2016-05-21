@@ -11,15 +11,14 @@ if(isset($activities) and  is_array($activities)){
 }
 
 ?>
-
+    
+    <?php if(!empty($upcomingEvents)){?>
     <div class="events">
         <div class="title">Upcoming events</div>
         <div class="event-number">1</div>
         <hr>
     </div>
-
-    <div class='Rounded_Rectangle_2'></div>
-
+    
     <div class="all-upcoming-events">
         <?php $upcomingEvents = isset($upcomingEvents) ? $upcomingEvents : array(); ?>
         <?php foreach ($upcomingEvents as $upcomingEvent) { ?>
@@ -51,26 +50,26 @@ if(isset($activities) and  is_array($activities)){
         <?php } ?>
     </div>
 
-    <div class="events">
+    <!-- <div class="events">
         <div class="title">Your friends invited you to</div>
         <div class="event-number">2</div>
         <hr>
-    </div>
+    </div> -->
 
-
-    <div class="events">
+    <!-- <div class="events">
         <div class="title">Your galleries</div>
         <div class="event-number">3</div>
         <hr>
-    </div>
-
+    </div> -->
 
     <div class="events">
         <div class="title">Ended events</div>
         <div class="event-number-finished">4</div>
         <hr>
     </div>
+    <?php }?>
 
+    <?php if(!empty($endedEvents)){?>
     <div class="all-ended-events">
         <?php $endedEvents = isset($endedEvents) ? $endedEvents : array(); ?>
         <?php foreach ($endedEvents as $endedEvent) { ?>
@@ -101,5 +100,6 @@ if(isset($activities) and  is_array($activities)){
             </div>
         <?php } ?>
     </div>
+    <?php }?>
 <?php
 
