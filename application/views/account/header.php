@@ -35,6 +35,8 @@
 	<!-- Bootstrap -->
 	<script src="<?=base_url()?>assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 
+	<link href='<?=base_url()?>assets/fonts/stylesheet.css' rel='stylesheet' type='text/css'>
+
 
 </head>
 
