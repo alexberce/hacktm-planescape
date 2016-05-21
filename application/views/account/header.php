@@ -82,7 +82,7 @@
 							</li>
 
 							<li><a href="<?=base_url()?>activity/ended">
-									<i class="fa fa-history"></i> Ended Events </a>
+									<i class="fa fa-history"></i> Past Events </a>
 							</li>
 
 							<li><a href="<?=base_url()?>invitation/add">
