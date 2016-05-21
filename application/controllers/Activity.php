@@ -116,7 +116,8 @@ class Activity extends MY_Controller
 		}
 	}
 
-	public function invite_friend($id){
+	public function invite_friend($id)
+    {
 		$this->data['activity'] = current($this->Activity_model->getActivity($id));
 		$email_address = $this->input->post('friend_email');
 

@@ -14,21 +14,23 @@
     </div>
 
     <div class="details">
+        <div class="details_left">
+            <div class="event-info">
+                <div class="event-title">
+                    <?php echo "#".$activity['title']; ?>
+                </div>
 
-        <div class="event-info">
-            <div class="event-title">
-                <?php echo $activity['title']; ?>
-            </div>
+                <div class="event-title">
 
-            <div class="event-row">
-
-               <div class="event-income">
-                   <i class="fa fa-lg fa-users event-users-icon" aria-hidden="true"></i><?php echo $activity['votes'].' Will be there.'; ?>
-               </div>
+                   <div class="event-income">
+                       <i class="fa fa-lg fa-users event-users-icon" aria-hidden="true"></i><?php echo $activity['votes'].' Will be there.'; ?>
+                   </div>
+                </div>
             </div>
         </div>
 
-        <div class="button_activity"><a><i class="fa fa-picture-o"></i>View Gallery</a></div>
+        <div class="button_gallery text-center pull-right"><a class="anchor_gallery"><i class="fa fa-picture-o"></i>View Gallery</a></div>
+        <div class="clear"></div>
     </div>
 </div>
 <?php } ?>
