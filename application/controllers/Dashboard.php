@@ -17,7 +17,6 @@ class Dashboard extends MY_Controller
 	}
 
 	public function index(){
-
 		$data['activities'] = $this->Activity_model->getActivities();
 		$data['view'] = 'dashboard/dashboard';
 		$this->load->view('account/layout', $data);

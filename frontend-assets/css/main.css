@@ -337,24 +337,25 @@
 
 	.events {
 		margin-bottom: 50px;
+		margin-top: 30px;
 
 	}
 
-	.all-ended-events img {
-		width: 200px;
+	.all-ended-events img, .all-upcoming-events img {
+		width: 225px;
 		height: 175px;
 	}
 
-	.all-ended-event {
-		max-width: 200px;
+	.all-ended-event, .all-upcoming-event {
+		max-width: 225px;
 		margin-left: 20px;
 	}
 
-	.ended-events-bottom, .all-ended-events{
+	.ended-events-bottom, .all-ended-events, .all-upcoming-events, .upcoming-events-buttom{
 		display: inline-flex;
 	}
 
-	.ended-events-bottom{
+	.ended-events-bottom, .upcoming-events-bottom{
 		width: 100%;
 		border: 4px solid rgb(255, 255, 255);
 		background-color: white;
@@ -362,33 +363,43 @@
 		padding: 10px;
 	}
 
-	.ended-events-description {
-		float: right;
-		padding: 10px;
+	.ended-events-description, .upcoming-events-description {
 		font-weight: 900;
+		text-align: center;
+		margin-bottom: 5px;
 	}
 
-	.ended-events-date-day{
-		font-size: 60px;
-		font-weight: bold;
-		color: rgb(103, 192, 117);
-	}
-
-	.ended-events-date-month {
-		color: rgb(103, 192, 117);
+	.ended-events-date-day, .upcoming-events-date-day{
 		font-size: 30px;
+		font-weight: bold;
+	}
+
+	.ended-events-date-month, .upcoming-events-date-month{
+		font-size: 20px;
 		font-weight: 900;
 	}
 
-	.ended-events-date {
+	.ended-events-date-month, .ended-events-date-day {
+		color: #ec2d04;
+	}
+
+	.upcoming-events-date-month, .upcoming-events-date-day{
+		color: rgb(103, 192, 117);
+	}
+
+	.ended-events-date, .upcoming-events-date {
 		float: left;
 		text-align: center;
 		border-right: 1px solid #ccc;
-		width: 95px;
 		padding-right: 15px;
 		font-family: Open Sans;
 	}
 
-	.all-ended-event {
+	.all-ended-event, .all-upcoming-event {
 		line-height: 1;
 	}
+
+	.ended-events-votes, .upcoming-events-votes {
+		text-align: center;
+	}
+
