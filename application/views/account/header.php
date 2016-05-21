@@ -83,6 +83,10 @@
 									<i class="fa fa-history"></i> Ended Events </a>
 							</li>
 
+							<li><a href="<?=base_url()?>activity/">
+									<i class="fa fa-history"></i>Activities </a>
+							</li>
+
 							<li><a href="<?=base_url()?>activity/view">
 									<i class="fa fa-picture-o"></i> Galleries </a>
 							</li>
