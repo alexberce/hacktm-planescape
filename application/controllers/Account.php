@@ -45,6 +45,24 @@ class Account extends CI_Controller
 		$this->form_validation->set_rules('email', 'Email', 'required|md5|is_unique[users.email]');
 		$this->form_validation->set_rules('retype-password', 'Retype Password', 'required|md5|matches[password]');
 
+        if($this->form_validation->run() == true){
+            $this->data = array(
+                'email' => $email,
+                'username' => $username,
+                'password' => md5($password)
+            );
+            $this->Account_model->register($this->data);
+            $id = $this->db->insert_id();
+            $userdata = array(
+                'username' => $username,
+                'email' => $email,
+                'id' => $id,
+                'loggedIn' => true
+            );
+            $this->session->set_userdata($userdata);
+            redirect('dashboard');
+        }
+
 		if ($this->form_validation->run() == true) {
 			$this->data = array(
 				'email'    => $email,
