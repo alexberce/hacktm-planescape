@@ -89,7 +89,7 @@
 									<i class="fa fa-send-o"></i> Invitations </a>
 							</li>
 
-							<li><a href="<?=base_url()?>activity/view">
+							<li><a href="<?=base_url()?>gallery/">
 									<i class="fa fa-picture-o"></i> Galleries </a>
 							</li>
 

@@ -12,7 +12,7 @@ class Activity_model extends CI_Model
     {
         $this->db->select('activity.*,files.path');
         $this->db->from('activity');
-        $this->db->join('files','files.id = activity.cover');
+        $this->db->join('files','files.id = activity.cover','left');
         $this->db->where('activity.user_id',$this->user_id);
         $query = $this->db->get();
 
@@ -105,6 +105,18 @@ class Activity_model extends CI_Model
     public function addAnswer($data)
     {
         $this->db->insert('question_answer',$data);
+    }
+
+    public function getActivitiesFiles($user_id,$activity_id)
+    {
+        $this->db->select('files.path');
+        $this->db->from('files');
+        $this->db->where('user_id',$user_id);
+        $this->db->where('activity_id',$activity_id);
+
+        $query = $this->db->get();
+
+        return $query->result_array();
     }
 
 }

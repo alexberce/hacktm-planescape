@@ -127,4 +127,6 @@ class Activity extends MY_Controller
 
 		redirect('activity/view/' . $id);
 	}
+
+
 }
