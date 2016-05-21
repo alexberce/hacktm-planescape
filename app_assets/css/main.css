@@ -52,4 +52,6 @@ body {
 .img-circle.profile_img {
     max-width: 56px;
     max-height: 56px;
+    min-width: 56px;
+    min-height: 56px;
 }
