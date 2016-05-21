@@ -75,16 +75,16 @@
 									<i class="fa fa-calendar"></i> Create An Event </a>
 							</li>
 
-							<li><a href="<?=base_url()?>activity/add">
+							<li><a href="<?=base_url()?>activity/upcoming">
 									<i class="fa fa-bullhorn"></i> Upcoming Events </a>
+							</li>
+
+							<li><a href="<?=base_url()?>activity/ended">
+									<i class="fa fa-history"></i> Ended Events </a>
 							</li>
 
 							<li><a href="<?=base_url()?>invitation/add">
 									<i class="fa fa-send-o"></i> Invitations </a>
-							</li>
-
-							<li><a href="<?=base_url()?>activity/view">
-									<i class="fa fa-history"></i> Ended Events </a>
 							</li>
 
 							<li><a href="<?=base_url()?>activity/">
