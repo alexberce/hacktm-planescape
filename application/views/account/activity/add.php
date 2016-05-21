@@ -9,7 +9,7 @@
 			<textarea class="input_text form-control" name="description" id="activity_description"
 					  placeholder="Enter activity description..."></textarea>
 		</div>
-		<div class=" col-md-12 padding item form-group">
+		<div class="item form-group">
 			<input class="input_text form-control" name="files" id="settings_profile_picture"
 				   placeholder="Profile Picture"
 				   type="file"/>
