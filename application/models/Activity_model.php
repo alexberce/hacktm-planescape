@@ -20,6 +20,7 @@ class Activity_model extends CI_Model
 
 	}
 
+
 	public function getEndedActivities()
 	{
 		$date = date('Y-m-d');
@@ -106,6 +107,29 @@ class Activity_model extends CI_Model
 	{
 		$this->db->insert('question_answer', $data);
 	}
+
+    public function getQuestions($activityId)
+    {
+        $this->db->select('text');
+        $this->db->from('questions');
+        $this->db->where('activity_id',$activityId);
+
+        $query = $this->db->get();
+
+        return $query->result_array();
+
+    }
+
+    public function getAnswers($questionId)
+    {
+        $this->db->select('text,votes');
+        $this->db->from('question_answers');
+        $this->db->where('question_id',$questionId);
+
+        $query = $this->db->get();
+
+        return $query->result_array();
+    }
 
 	public function getActivitiesFiles($user_id, $activity_id)
 	{

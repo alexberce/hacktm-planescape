@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        <div class="button_gallery text-center pull-right"><a class="anchor_gallery"><i class="fa fa-picture-o"></i>View Gallery</a></div>
+        <div class="button_gallery text-center pull-right"><a class="anchor_gallery" href="<?=base_url();?>gallery/view/<?=$activity['id']?>"><i class="fa fa-picture-o"></i>View Gallery</a></div>
         <div class="clear"></div>
     </div>
 </div>

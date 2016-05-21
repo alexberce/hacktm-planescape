@@ -1,5 +1,6 @@
 <?php
 if (is_array($event_details)) {
+
 	foreach ($event_details as $detail) { ?>
 		<div class="container event-container">
 			<div class="photo" style="background-image: url(<?php echo base_url() . $detail['path']?>)">
@@ -70,6 +71,38 @@ if (is_array($event_details)) {
 				<?php } ?>
 				<hr />
 			</div>
+
+			<?php if($detail['user_id'] == $this->session->userdata('id')) { ?>
+			<div class="event-invite-section">
+				<div class="col-md-12">
+
+					<?php if(isset($questions) and is_array($questions)) { ?>
+
+						<?php for($i=0;$i<=count($questions);$i++) { ?>
+
+							<?php $number = $i+1;?>
+							<h2><?php echo $number.'. '.$questions[$i]['text'] ;?></h2>
+
+							<?php if(isset($answers) and is_array($answers)) { ?>
+
+								<?php for($i=0;$i<=count($answers);$i++){?>
+
+									<?php $numberAnswer = $i+1;?>
+									<?php echo $numberAnswer.'. '.$answers[$i]['text'] ;?>
+
+								<?php } ?>
+							<?php } ?>
+						<?php } ?>
+					<?php } ?>
+					<div class="section-title">
+						Questions
+					</div>
+					<div class="event-invite-section-content">
+						<?php $this->load->view('account/activity/add_question'); ?>
+					</div>
+				</div>
+			</div>
+			<?php } ?>
 
 			<div class="event-invite-section">
 				<div class="col-md-12">

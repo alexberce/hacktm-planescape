@@ -16,5 +16,14 @@ class Gallery extends CI_Controller
         $this->load->view('account/layout', $data);
     }
 
+    public function view($id)
+    {
+        $data['files'] = $this->Activity_model->getActivitiesFiles($this->session->userdata('id'), $id);
+
+        $data['view'] = 'gallery/view';
+        $this->load->view('account/layout', $data);
+
+    }
+
 
 }
