@@ -91,4 +91,5 @@ class Activity_model extends CI_Model
     {
         $this->db->insert('question_answer',$data);
     }
+
 }

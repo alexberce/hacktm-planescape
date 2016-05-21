@@ -81,7 +81,7 @@ class Uploads_model extends CI_Model
 
 		} else {
 			$file_data = $this->upload->data();
-			$this->session->set_userdata('user_img',$path .'/'. $file_data['file_name']);
+
 			$data['files'][] = array(
 				"name"         => $file_data['file_name'],
 				"size"         => $file_data['file_size'],

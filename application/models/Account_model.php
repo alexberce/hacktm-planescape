@@ -31,6 +31,10 @@ class Account_model extends CI_Model
 		if (is_numeric($ids))
 			$data['profile_picture'] = $ids;
 
+		$path = $this->getUserPath($ids);
+
+		$this->session->set_userdata('user_img',$path['path']);
+
 		$this->db->where('id', $this->user_id)->update($this->table_name, $data);
 	}
 
@@ -51,6 +55,17 @@ class Account_model extends CI_Model
 	public function register($data)
 	{
 		$this->db->insert('users', $data);
+	}
+
+	public function getUserPath($id)
+	{
+		$this->db->select('path');
+		$this->db->from('files');
+		$this->db->where('id',$id);
+
+		$query = $this->db->get();
+
+		return $query->row_array();
 	}
 
 }
