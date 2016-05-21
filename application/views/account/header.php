@@ -13,6 +13,8 @@
 	<link href="<?=base_url()?>assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Font Awesome -->
 	<link href="<?=base_url()?>assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<!-- Main -->
+	<link href="<?=base_url()?>frontend-assets/css/main.css" rel="stylesheet">
 	<!-- iCheck -->
 	<link href="<?=base_url()?>assets/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 	<!-- bootstrap-progressbar -->
@@ -32,6 +34,8 @@
 	<script src="<?=base_url()?>assets/vendors/jquery/dist/jquery.min.js"></script>
 	<!-- Bootstrap -->
 	<script src="<?=base_url()?>assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
 </head>
 
 <body class="nav-md">

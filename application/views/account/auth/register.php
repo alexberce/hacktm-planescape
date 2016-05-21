@@ -18,7 +18,6 @@
       <div class="brand">
         <h2>First time?</h2>
       </div>
-      <?php echo validation_errors();?>
       <div class="regp pull-left">
         <form action="?" method="post" id="register-form">
           <div class="oauth-content">
