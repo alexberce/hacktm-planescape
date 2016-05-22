@@ -12,6 +12,8 @@ class MY_Controller extends MY_Controller_Common {
 		parent::__construct();
 		$this->checkIfIsLoggedIn();
 		$this->load->model('Account_model');
+		$this->load->model('Activity_model');
 		$this->account_data = $this->Account_model->getAccountData();
+		$this->data['notifications'] = $this->Activity_model->get_notifications();
 	}
 }

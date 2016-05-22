@@ -147,18 +147,32 @@ class Activity_model extends CI_Model
 	{
 		$invitations = $this->db->where('event_id', $id)->where('to_user_email', $email)->get('invitations');
 
-		return $this->db->num_rows() ? false : true;
+		return $invitations->num_rows() ? false : true;
 	}
 
 	public function create_event_invitation($id, $email)
 	{
 		if (!$this->check_event_invitation($id, $email)) return false;
+		$hash = md5($this->user_id . $email);
 		$data = array(
 			'event_id'      => $id,
 			'to_user_email' => $email,
 			'from_user_id'  => $this->user_id,
+			'hash'  => $hash,
 		);
-		$this->db->insert('questions', $data);
+		$this->db->insert('invitations', $data);
+		return $hash;
+	}
+
+	public function get_notifications(){
+		$notifications = $this->db->where('to_user_email', $this->session->userdata('email'))
+			->select('activity.*,invitations.hash,files.path')
+			->from('invitations')
+			->where('accepted', 0)
+			->join('activity', 'invitations.event_id = activity.id')
+			->join('files', 'activity.cover = files.id', 'left')
+			->get();
+		return $notifications->result_array();
 	}
 
 }

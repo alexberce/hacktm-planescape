@@ -129,15 +129,20 @@ class Activity extends MY_Controller
 		$this->data['activity'] = current($this->Activity_model->getActivity($id));
 		$email_address = $this->input->post('friend_email');
 
-		$this->Acctivity_model->create_event_invitation($id, $email);
-
-		$this->data['activity_owner'] = $this->session->userdata('username');
-		$subject = 'You\'ve been invited to an event';
-		$text = $this->load->view('messages/emails/invitation', $this->data, true);
-		$this->send_mail($email_address, $subject, $text);
-
+		$hash = $this->Activity_model->create_event_invitation($id, $email_address);
+		if ($hash) {
+			$this->data['activity_owner'] = $this->session->userdata('username');
+			$this->data['hash'] = $hash;
+			$subject = 'You\'ve been invited to an event';
+			$text = $this->load->view('messages/emails/invitation', $this->data, true);
+			$this->send_mail($email_address, $subject, $text);
+		}
 		redirect('activity/view/' . $id);
 	}
 
-
+	public function accept_invite($hash, $ajax = false){
+		$this->Account_model->accept_invite($hash);
+		if (! $ajax)
+			redirect('dashboard');
+	}
 }
