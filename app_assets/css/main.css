@@ -164,3 +164,8 @@ ul.msg_list li a .time {
 .event-attend:hover a{
     color: #000 !important;
 }
+
+.event-attend:hover a.no-hover {
+    color: #fff !important;
+    cursor: default;
+}

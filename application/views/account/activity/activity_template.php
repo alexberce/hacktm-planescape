@@ -13,7 +13,7 @@
             <?php if($date != 'end_date'): ?>
             <div class="event-attend">
                 <?php if($this->session->userdata('id') == $activity['user_id'] || (isset($activity['accepted']) && $activity['accepted'])):?>
-                    <a href="javascript:void(0)">Going</a>
+                    <a class="no-hover" href="javascript:void(0)">Going</a>
                 <?php else: ?>
                     <a href="<?php echo base_url(); ?>activity/accept_invite/<?php echo $activity['hash']?>">
                         <i class="fa fa-check"></i> Attend
