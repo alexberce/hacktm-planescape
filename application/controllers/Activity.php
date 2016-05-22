@@ -109,18 +109,18 @@ class Activity extends MY_Controller
 
 	public function view($eventId){
 		if (!empty($eventId)) {
-			$data['event_details'] = $this->Activity_model->getEventDetails($eventId);
-			$data['gallery_photos'] = $this->Uploads_model->getPhotosById($eventId);
-            $data['questions'] = $this->Activity_model->getQuestions($eventId);
-            if(is_array($data['questions']) and !empty($data['questions'])){
-                foreach($data['questions'] as $question){
+			$this->data['event_details'] = $this->Activity_model->getEventDetails($eventId);
+			$this->data['gallery_photos'] = $this->Uploads_model->getPhotosById($eventId);
+            $this->data['questions'] = $this->Activity_model->getQuestions($eventId);
+            if(is_array($this->data['questions']) and !empty($this->data['questions'])){
+                foreach($this->data['questions'] as $question){
                     $answers[] = $this->Activity_model->getAnswers($question['id']);
                 }
-                $data['answers'] = $answers;
+                $this->data['answers'] = $answers;
             }
 
-			$data['view'] = 'activity/event_details';
-			$this->load->view('account/layout', $data);
+			$this->data['view'] = 'activity/event_details';
+			$this->load->view('account/layout', $this->data);
 		}
 	}
 

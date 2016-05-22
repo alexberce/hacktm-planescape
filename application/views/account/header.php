@@ -85,7 +85,7 @@
 									<i class="fa fa-history"></i> Past Events </a>
 							</li>
 
-							<li><a href="<?=base_url()?>invitation/add">
+							<li><a href="<?=base_url()?>invitation">
 									<i class="fa fa-send-o"></i> Invitations </a>
 							</li>
 

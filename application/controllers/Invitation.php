@@ -1,10 +1,14 @@
 <?php
 
-class Invitation extends CI_Controller
+class Invitation extends MY_Controller
 {
     public function __construct()
     {
         parent::__construct();
+
+    }
+
+    function index(){
 
     }
 
@@ -21,7 +25,7 @@ class Invitation extends CI_Controller
             $this->email->to($email);
 
             $this->email->subject('Plan Escape Invitation');
-            $this->email->message('You recived an invitation from'.$this->session->userdata('email'));
+            $this->email->message('You received an invitation from '.$this->session->userdata('email'));
 
             $this->email->send();
         }
