@@ -28,7 +28,9 @@ class Dashboard extends MY_Controller
 			$this->data['gallery_photos'] = $this->Uploads_model->getPhotosById($_GET['eventId']);
 			$this->load->view('account/activity/event_details', $this->data);
 		} else {
-
+			$goingUpcoming = array();
+			$goingEnded = array();
+			$goingOpen = array();
 			$this->data['endedEvents'] = $this->Activity_model->getEndedActivities();
 			$this->data['upcomingEvents'] = $this->Activity_model->getUpcomingActivities();
 			$this->data['openEvents'] = $this->Activity_model->getOpenActivities();

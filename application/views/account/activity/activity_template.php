@@ -47,9 +47,13 @@
             </div>
             <div class="<?php echo $class;?>-events-votes">
                 <i class="fa fa-lg fa-users" aria-hidden="true"></i>
-               <?php foreach($accepted_invitation[$activity['id']] as $value){ ?>
-                   <?php echo $value+1 . ' ' . $participation_text; ?>
-               <?php } ?>
+                <?php if(isset($accepted_invitation) and !empty($accepted_invitation) and is_array($accepted_invitation)) { ?>
+                   <?php foreach($accepted_invitation[$activity['id']] as $value){ ?>
+                       <?php echo $value+1 . ' ' . $participation_text; ?>
+                   <?php } ?>
+                <?php } else { ?>
+                <?php echo 1 . ' ' . $participation_text; ?>
+                <?php }?>
 
 
             </div>

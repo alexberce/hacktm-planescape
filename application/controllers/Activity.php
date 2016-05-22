@@ -114,6 +114,16 @@ class Activity extends MY_Controller
     {
         $this->data['activities'] = $this->Activity_model->getEndedActivities();
 
+        $goingEnded = array();
+        if(is_array($this->data['activities']) and !empty($this->data['activities'])) {
+            foreach ($this->data['activities'] as $activity) {
+                $goingEnded[$activity['id']] = $this->Activity_model->getNumberAcceptEvent($activity['id']);
+            }
+        }
+        $this->data['accepted_invitation'] = array(
+            'ended' => $goingEnded,
+        );
+
         $this->data['view']='activity/list_ended';
         $this->load->view('account/layout',$this->data);
 
@@ -122,7 +132,15 @@ class Activity extends MY_Controller
     public function upcoming()
     {
         $this->data['activities'] = $this->Activity_model->getUpcomingActivities();
-
+        $goingUpcoming = array();
+        if(is_array($this->data['activities']) and !empty($this->data['activities'])) {
+            foreach ($this->data['endedEvents'] as $activity) {
+                $goingUpcoming[$activity['id']] = $this->Activity_model->getNumberAcceptEvent($activity['id']);
+            }
+        }
+        $this->data['accepted_invitation'] = array(
+            'upcoming' => $goingUpcoming,
+        );
         $this->data['view']='activity/list_upcoming';
         $this->load->view('account/layout',$this->data);
     }
