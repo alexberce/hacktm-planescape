@@ -22,6 +22,7 @@ class Activity extends MY_Controller
     {
         $title = $this->input->post('title');
         $description = nl2br($this->input->post('description'));
+        $address = $this->input->post('address');
         $start_date = $this->input->post('start_date');
         $end_date = $this->input->post('end_date');
 
@@ -32,6 +33,7 @@ class Activity extends MY_Controller
         $end_date = date('Y-m-d',strtotime($end_date));
 
         $this->form_validation->set_rules('title', 'Title', 'required');
+        $this->form_validation->set_rules('address', 'Address', 'required');
         $this->form_validation->set_rules('start_date', 'Start Date', 'required');
         $this->form_validation->set_rules('end_date', 'End Date', 'required');
 
@@ -41,6 +43,7 @@ class Activity extends MY_Controller
             $data = array(
                 'title' => $title,
                 'description' => $description,
+                'address' => $address,
                 'user_id' => $this->user_id,
                 'cover' => $file,
                 'date' => $start_date,
