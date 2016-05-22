@@ -134,7 +134,7 @@ class Activity extends MY_Controller
         $this->data['activities'] = $this->Activity_model->getUpcomingActivities();
         $goingUpcoming = array();
         if(is_array($this->data['activities']) and !empty($this->data['activities'])) {
-            foreach ($this->data['endedEvents'] as $activity) {
+            foreach ($this->data['activities'] as $activity) {
                 $goingUpcoming[$activity['id']] = $this->Activity_model->getNumberAcceptEvent($activity['id']);
             }
         }
