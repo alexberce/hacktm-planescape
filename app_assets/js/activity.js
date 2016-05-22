@@ -31,8 +31,17 @@ $(document).ready(function () {
 			$('#add_question_form').hide();
 		})
 	});
-	$('#votes').click(function(){
 
-	})
+	$('.question_answer').click(function(){
+		var question_id = $(this).data('question-id');
+		var answer_id = $(this).data('id');
+		var points = parseInt($(this).html());
+		$.ajax({
+			url: base_url + 'activity/answer_vote/' + question_id + '/' + answer_id,
+		}).done(function() {
+			console.log(points);
+			$('#' + question_id + '_' + answer_id).html(points+=1);
+		});
+	});
 });
 

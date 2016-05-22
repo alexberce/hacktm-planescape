@@ -60,11 +60,9 @@ class Activity extends MY_Controller
 
     }
 
-    public function answer_edit($id)
+    public function answer_vote($question_id, $answer_id)
     {
-        $votes = $this->input->post('votes');
-
-
+        $this->Activity_model->vote_answer($question_id, $answer_id);
     }
 
     public function question($id)

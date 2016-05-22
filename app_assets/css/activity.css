@@ -63,6 +63,8 @@ ol.answers_group{
 
 .event-answer .badge {
     margin-left: 10px;
+    background: #7CC576;
+    cursor: pointer;
 }
 
 .section-title {

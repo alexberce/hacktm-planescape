@@ -90,11 +90,9 @@ if (is_array($event_details)) {
 									<?php foreach($answers[$question['id']] as $answer_key => $answer){ ?>
 										<li class="event-answer">
 											<?php echo $answer['text'] ;?></>
-
-												<span class="badge">
+												<span data-id="<?=$answer['id']?>" data-question-id="<?=$question['id']?>" id="<?=$question['id'] . '_' . $answer['id']?>" class="question_answer badge">
 													<?php echo $answer['votes'];?>
 												</span>
-
 										</li>
 									<?php } ?>
 									</ol>

@@ -166,6 +166,13 @@ class Activity_model extends CI_Model
         return $query->result_array();
     }
 
+	public function vote_answer($question_id, $answer_id){
+		$this->db->where('question_id', $question_id)
+			->where('id', $answer_id)
+			->set('votes', 'votes+1', false)
+			->update('question_answers');
+	}
+
 	public function getActivitiesFiles($user_id, $activity_id)
 	{
 		$this->db->select('files.path');
