@@ -141,7 +141,7 @@ class Activity extends MY_Controller
 	}
 
 	public function accept_invite($hash, $ajax = false){
-		$this->Account_model->accept_invite($hash);
+		$this->Activity_model->accept_invite($hash);
 		if (! $ajax)
 			redirect('dashboard');
 	}

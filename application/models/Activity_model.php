@@ -16,7 +16,7 @@ class Activity_model extends CI_Model
 			$invitations_id[] = $invitation['event_id'];
 		}
 
-		$this->db->select('activity.*,files.path,invitations.accepted');
+		$this->db->select('activity.*,files.path,invitations.accepted,invitations.hash');
 		$this->db->from('activity');
 		$this->db->join('files', 'files.id = activity.cover', 'left');
 		$this->db->join('invitations', 'invitations.event_id = activity.id', 'left');
@@ -38,7 +38,7 @@ class Activity_model extends CI_Model
 		}
 
 		$date = date('Y-m-d');
-		$this->db->select('activity.*,files.path,invitations.accepted');
+		$this->db->select('activity.*,files.path,invitations.accepted,invitations.hash');
 		$this->db->from('activity');
 		$this->db->join('files', 'files.id = activity.cover');
 		$this->db->join('invitations', 'invitations.event_id = activity.id', 'left');
@@ -64,7 +64,7 @@ class Activity_model extends CI_Model
 		}
 
 		$date = date('Y-m-d');
-		$this->db->select('activity.*,files.path,invitations.accepted');
+		$this->db->select('activity.*,files.path,invitations.accepted,invitations.hash');
 		$this->db->from('activity');
 		$this->db->join('files', 'files.id = activity.cover');
 		$this->db->join('invitations', 'invitations.event_id = activity.id', 'left');
@@ -91,7 +91,7 @@ class Activity_model extends CI_Model
 		}
 
 		$date = date('Y-m-d');
-		$this->db->select('activity.*,files.path,invitations.accepted');
+		$this->db->select('activity.*,files.path,invitations.accepted,invitations.hash');
 		$this->db->from('activity');
 		$this->db->join('files', 'files.id = activity.cover');
 		$this->db->join('invitations', 'invitations.event_id = activity.id', 'left');
@@ -201,7 +201,7 @@ class Activity_model extends CI_Model
 	public function create_event_invitation($id, $email)
 	{
 		if (!$this->check_event_invitation($id, $email)) return false;
-		$hash = md5($this->user_id . $email);
+		$hash = md5($this->user_id . $id . $email);
 		$data = array(
 			'event_id'      => $id,
 			'to_user_email' => $email,
@@ -223,4 +223,9 @@ class Activity_model extends CI_Model
 		return $notifications->result_array();
 	}
 
+	public function accept_invite($hash){
+		$this->db->where('to_user_email', $this->session->userdata('email'))
+			->where('hash', $hash)
+			->update('invitations', array('accepted' => 1));
+	}
 }

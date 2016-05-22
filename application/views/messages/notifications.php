@@ -21,15 +21,15 @@
 				</span>
 					</a>
 				</li>
-				<li>
-					<div class="text-center">
-						<a href="inbox.html">
-							<strong>See All Alerts</strong>
-							<i class="fa fa-angle-right"></i>
-						</a>
-					</div>
-				</li>
 			<?php endforeach; ?>
+			<li>
+				<div class="text-center">
+					<a href="<?=base_url()?>invitation">
+						<strong>See All Invitations</strong>
+						<i class="fa fa-angle-right"></i>
+					</a>
+				</div>
+			</li>
 		<?php else: ?>
 			<li>
 				You don't have any notifications

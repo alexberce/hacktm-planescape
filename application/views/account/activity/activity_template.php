@@ -1,12 +1,32 @@
 
 <?php if($date == 'end_date') {
     $class = 'ended';
+    $participation_text = 'participated';
 } else {
     $class = 'upcoming';
+    $participation_text = 'will be there';
 }?>
 <div class="all-<?php echo $class;?>-event" >
     <div class="ended-events-top">
-        <a href="<?php echo base_url(); ?>activity/view/<?php echo $activity['id']?>"><img src="<?php echo  base_url() .$activity['path'] ; ?>"></a>
+        <img src="<?php echo  base_url() .$activity['path'] ; ?>">
+        <div class="approve-reject-event">
+            <?php if($date != 'end_date'): ?>
+            <div class="event-attend">
+                <?php if($this->session->userdata('id') == $activity['user_id'] || (isset($activity['accepted']) && $activity['accepted'])):?>
+                    Going
+                <?php else: ?>
+                    <a href="<?php echo base_url(); ?>activity/accept_invite/<?php echo $activity['hash']?>">
+                        <i class="fa fa-check"></i> Attend
+                    </a>
+                <?php endif; ?>
+            </div>
+            <?php endif; ?>
+            <div class="event-view">
+                <a href="<?php echo base_url(); ?>activity/view/<?php echo $activity['id']?>">
+                    <i class="fa fa-eye"></i> View
+                </a>
+            </div>
+        </div>
     </div>
     <div class="<?php echo $class;?>-events-bottom">
         <div class="<?php echo $class;?>-events-date">
@@ -23,7 +43,7 @@
             </div>
             <div class="<?php echo $class;?>-events-votes">
                 <i class="fa fa-lg fa-users" aria-hidden="true"></i>
-                <?php echo $activity['votes'].' Will be there.'; ?>
+                <?php echo $activity['votes'] . ' ' . $participation_text; ?>
             </div>
         </div>
         <div class="clearfix"></div>
