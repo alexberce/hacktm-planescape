@@ -10,24 +10,43 @@ class Activity_model extends CI_Model
 
 	public function getActivities()
 	{
-		$this->db->select('activity.*,files.path');
+		$invitations_id = array();
+		$invitations = $this->get_invitations();
+		foreach($invitations as $invitation){
+			$invitations_id[] = $invitation['event_id'];
+		}
+
+		$this->db->select('activity.*,files.path,invitations.accepted');
 		$this->db->from('activity');
 		$this->db->join('files', 'files.id = activity.cover', 'left');
+		$this->db->join('invitations', 'invitations.event_id = activity.id', 'left');
 		$this->db->where('activity.user_id', $this->user_id);
+		if (count($invitations_id))
+			$this->db->or_where('activity.id IN (' . implode(',',$invitations_id) . ')');
 		$query = $this->db->get();
 
 		return $query->result_array();
-
 	}
 
 
 	public function getEndedActivities()
 	{
+		$invitations_id = array();
+		$invitations = $this->get_invitations();
+		foreach($invitations as $invitation){
+			$invitations_id[] = $invitation['event_id'];
+		}
+
 		$date = date('Y-m-d');
-		$this->db->select('activity.*,files.path');
+		$this->db->select('activity.*,files.path,invitations.accepted');
 		$this->db->from('activity');
 		$this->db->join('files', 'files.id = activity.cover');
+		$this->db->join('invitations', 'invitations.event_id = activity.id', 'left');
+		$this->db->group_start();
 		$this->db->where('activity.user_id', $this->user_id);
+		if (count($invitations_id))
+			$this->db->or_where('activity.id IN (' . implode(',',$invitations_id) . ')');
+		$this->db->group_end();
 		$this->db->where('activity.end_date < ', $date);
 
 		$query = $this->db->get();
@@ -38,11 +57,22 @@ class Activity_model extends CI_Model
 
 	public function getOpenActivities()
 	{
+		$invitations_id = array();
+		$invitations = $this->get_invitations();
+		foreach($invitations as $invitation){
+			$invitations_id[] = $invitation['event_id'];
+		}
+
 		$date = date('Y-m-d');
-		$this->db->select('activity.*,files.path');
+		$this->db->select('activity.*,files.path,invitations.accepted');
 		$this->db->from('activity');
 		$this->db->join('files', 'files.id = activity.cover');
+		$this->db->join('invitations', 'invitations.event_id = activity.id', 'left');
+		$this->db->group_start();
 		$this->db->where('activity.user_id', $this->user_id);
+		if (count($invitations_id))
+			$this->db->or_where('activity.id IN (' . implode(',',$invitations_id) . ')');
+		$this->db->group_end();
 		$this->db->where('activity.date < ', $date);
 		$this->db->where('activity.end_date > ', $date);
 
@@ -54,11 +84,22 @@ class Activity_model extends CI_Model
 
 	public function getUpcomingActivities()
 	{
+		$invitations_id = array();
+		$invitations = $this->get_invitations();
+		foreach($invitations as $invitation){
+			$invitations_id[] = $invitation['event_id'];
+		}
+
 		$date = date('Y-m-d');
-		$this->db->select('activity.*,files.path');
+		$this->db->select('activity.*,files.path,invitations.accepted');
 		$this->db->from('activity');
 		$this->db->join('files', 'files.id = activity.cover');
+		$this->db->join('invitations', 'invitations.event_id = activity.id', 'left');
+		$this->db->group_start();
 		$this->db->where('activity.user_id', $this->user_id);
+		if (count($invitations_id))
+			$this->db->or_where('activity.id IN (' . implode(',',$invitations_id) . ')');
+		$this->db->group_end();
 		$this->db->where('activity.date > ', $date);
 
 		$query = $this->db->get();
@@ -141,6 +182,13 @@ class Activity_model extends CI_Model
 		$query = $this->db->get();
 
 		return $query->result_array();
+	}
+
+	public function get_invitations(){
+		$invitations = $this->db
+			->where('to_user_email', $this->session->userdata('email'))
+			->get('invitations');
+		return $invitations->result_array();
 	}
 
 	public function check_event_invitation($id, $email)
