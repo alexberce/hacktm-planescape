@@ -60,6 +60,8 @@ class Activity extends MY_Controller
     public function question($id)
     {
         $question = $this->input->post('question');
+        $answer1 = $this->input->post('answer1');
+        $answer2 = $this->input->post('answer2');
 
         $this->form_validation->set_rules('question','Question','requiered');
 
@@ -69,25 +71,28 @@ class Activity extends MY_Controller
                 'activity_id' => $id
                 );
             $this->Activity_model->addQuestion($data);
-        }
+            $question_id = $this->db->insert_id();
 
-        $this->data['view']='activity/add_question';
-        $this->load->view('account/layout',$this->data);
-    }
+            $data = array(
+                array(
+                    'text' => $answer1,
+                    'question_id' => $question_id
+                ),
+                array(
+                    'text' => $answer2,
+                    'question_id' => $question_id
+                ),
 
-    public function answer($questionId)
-    {
-        $answer = $this->input->post('answer');
-        $data = array(
-            'question_id' => $questionId,
-            'text' => $answer
             );
 
-        $this->Activity_model->addAnswer($data);
+            foreach($data as $answer){
+                $this->Activity_model->addAnswer($answer);
+            }
 
-        $this->data['view']='activity/add_answer';
+        }
+
+        $this->data['view']='activity/add_question_answer';
         $this->load->view('account/layout',$this->data);
-
     }
 
     public function ended()

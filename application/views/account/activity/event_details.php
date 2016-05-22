@@ -72,37 +72,51 @@ if (is_array($event_details)) {
 				<hr />
 			</div>
 
-			<?php if($detail['user_id'] == $this->session->userdata('id')) { ?>
-			<div class="event-invite-section">
-				<div class="col-md-12">
 
-					<?php if(isset($questions) and is_array($questions)) { ?>
+			<div class="event-invite-section">
+				<div class="col-md-12" id="questions_content">
+
+					<div class="section-title">
+						Questions
+					</div>
+
+					<?php if(isset($questions) and is_array($questions) and !empty($questions)) { ?>
+
+						<div class="section-title">
+							Questions
+						</div>
 
 						<?php for($i=0;$i<=count($questions);$i++) { ?>
 
 							<?php $number = $i+1;?>
-							<h2><?php echo $number.'. '.$questions[$i]['text'] ;?></h2>
+							<div class="event-invite-section-content">
+								<h2><?php echo $number.'. '.$questions[$i]['text'] ;?></h2>
 
-							<?php if(isset($answers) and is_array($answers)) { ?>
+								<?php if(isset($answers) and is_array($answers) and !empty($answers)) { ?>
 
-								<?php for($i=0;$i<=count($answers);$i++){?>
+									<?php for($i=0;$i<=count($answers);$i++){?>
 
-									<?php $numberAnswer = $i+1;?>
-									<?php echo $numberAnswer.'. '.$answers[$i]['text'] ;?>
+										<?php $numberAnswer = $i+1;?>
+										<h1><?php echo $numberAnswer.'. '.$answers[$i]['text'] ;?></h1>
+										<div><i class="fa fa-plus-square" aria-hidden="true"></i><?php echo $answers[$i]['votes'];?></div>
 
+									<?php } ?>
 								<?php } ?>
-							<?php } ?>
+
+							</div>
+
 						<?php } ?>
 					<?php } ?>
-					<div class="section-title">
-						Questions
-					</div>
-					<div class="event-invite-section-content">
-						<?php $this->load->view('account/activity/add_question'); ?>
-					</div>
+
+					<?php if($detail['user_id'] == $this->session->userdata('id')) { ?>
+						<div id="add_question_button" class="input-group col-md-3 padding" style="margin-left:29px"><input class="input button_activity" type="submit" name="submit" value="Add Question"></div>
+						<div id="add_question_form" class="event-invite-section-content" >
+							<?php $this->load->view('account/activity/add_question_answer.php',array('id' => $detail['id'])); ?>
+						</div>
+					<?php } ?>
 				</div>
 			</div>
-			<?php } ?>
+
 
 			<div class="event-invite-section">
 				<div class="col-md-12">
@@ -118,7 +132,9 @@ if (is_array($event_details)) {
 
 		</div>
 	<?php }
+
+
 }
-
-
+?>
+<script src="<?=base_url();?>app_assets/js/activity.js"></script>
 

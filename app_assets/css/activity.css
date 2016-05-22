@@ -53,3 +53,10 @@
     margin: 20px;
     margin-top: 10px;
 }
+
+.float{
+    float:left;
+}
+.margin_button{
+    margin-left: 20px;
+}
