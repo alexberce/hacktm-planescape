@@ -361,6 +361,7 @@
 		background-color: white;
 		box-shadow: 0px 0px 23px -6px rgba(0,0,0,0.75);
 		padding: 10px;
+		display: inline-flex;
 	}
 
 	.ended-events-description, .upcoming-events-description {
@@ -368,7 +369,6 @@
 		text-align: left;
 		margin-bottom: 5px;
 		padding-left: 10px;
-		display: inline-flex;
 	}
 
 	.ended-events-date-day, .upcoming-events-date-day{
