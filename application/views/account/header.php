@@ -97,12 +97,12 @@
 									<i class="fa fa-history"></i> Past Events </a>
 							</li>
 
-							<li><a href="<?=base_url()?>invitation">
-									<i class="fa fa-send-o"></i> Invitations </a>
+							<li><a href="<?=base_url()?>invitation" class="hiperlink-not-active">
+									<i class="fa fa-send-o"></i> Invitations <div class="coming-soon">Soon</div> </a>
 							</li>
 
-							<li><a href="<?=base_url()?>gallery/">
-									<i class="fa fa-picture-o"></i> Galleries </a>
+							<li><a href="<?=base_url()?>gallery/" class="hiperlink-not-active">
+									<i class="fa fa-picture-o"></i> Galleries <div class="coming-soon">Soon</div> </a>
 							</li>
 
 							<li><a href="<?=base_url()?>settings">
