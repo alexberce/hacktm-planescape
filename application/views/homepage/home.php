@@ -103,7 +103,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="intro-message">
-						<h3>Plan your family events more easily than ever!</h3>
+						<h3>Plan your family events easier than ever!</h3>
 						<hr class="intro-divider">
 						<ul class="list-inline intro-social-buttons">
 							<li>
