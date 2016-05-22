@@ -53,7 +53,7 @@ class Activity_model extends CI_Model
         $this->db->select('activity.*,files.path,invitations.accepted,invitations.hash');
         $this->db->from('activity');
         $this->db->join('files', 'files.id = activity.cover');
-        $this->db->join('invitations', 'invitations.event_id = activity.id', 'left');
+        $this->db->join('invitations', 'invitations.event_id = activity.id AND invitations.to_user_email="' . $this->session->userdata('email') . '"', 'left');
         $this->db->group_start();
         $this->db->where('activity.user_id', $this->user_id);
         if (count($invitations_id))
@@ -105,7 +105,7 @@ class Activity_model extends CI_Model
         $this->db->select('activity.*,files.path,invitations.accepted,invitations.hash');
         $this->db->from('activity');
         $this->db->join('files', 'files.id = activity.cover');
-        $this->db->join('invitations', 'invitations.event_id = activity.id', 'left');
+        $this->db->join('invitations', 'invitations.event_id = activity.id AND invitations.to_user_email="' . $this->session->userdata('email') . '"', 'left');
         $this->db->group_start();
         $this->db->where('activity.user_id', $this->user_id);
         if (count($invitations_id))
