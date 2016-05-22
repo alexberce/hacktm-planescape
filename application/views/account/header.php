@@ -46,7 +46,17 @@
 		<div class="col-md-3 left_col">
 			<div class="left_col scroll-view">
 				<div class="navbar nav_title" style="border: 0;">
-					<a href="index.html" class="site_title"><img src="<?=base_url()?>app_assets/images/logo.png" /></a>
+					<a href="<?=base_url()?>" class="site_title"><img src="<?=base_url()?>app_assets/images/logo.png" /></a>
+					<svg class="logo_small_sidebar" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 62.3 62.3" style="enable-background:new 0 0 62.3 62.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#4D4D4E;}
+</style>
+						<g id="XMLID_2_">
+							<path id="XMLID_36_" class="st0" d="M42.1,23c-0.7-0.7-1.5-1.1-2.2-1.2s-1.5,0.2-2.2,0.9c-0.6,0.6-0.9,1.4-0.8,2.2   c0.1,0.8,0.5,1.7,1.2,2.5l0.1,0l4.1-4.1L42.1,23z"/>
+							<path id="XMLID_38_" class="st0" d="M21.8,26.7c-0.7,0-1.3,0.1-1.8,0.4s-0.9,0.7-1.2,1.3v7.7c0.3,0.5,0.7,0.9,1.2,1.1   s1.1,0.4,1.9,0.4c1.2,0,2-0.5,2.5-1.4c0.5-0.9,0.8-2.1,0.8-3.7v-0.3c0-1.7-0.3-3-0.8-4C23.8,27.2,23,26.7,21.8,26.7z"/>
+							<path id="XMLID_115_" class="st0" d="M31.2,0C14,0,0,14,0,31.2c0,17.2,14,31.2,31.2,31.2s31.2-14,31.2-31.2C62.3,14,48.4,0,31.2,0z    M29.9,32.6c0,2.6-0.6,4.7-1.8,6.3c-1.2,1.6-2.9,2.4-5.1,2.4c-0.9,0-1.7-0.2-2.5-0.5c-0.7-0.3-1.3-0.8-1.8-1.5v5.1l2.3,0.5v2.9   h-9.3v-2.9l2.3-0.5V26.6l-2.5-0.5v-2.9h6.9l0.2,2.1c0.5-0.8,1.1-1.3,1.9-1.8c0.7-0.4,1.6-0.6,2.5-0.6c2.2,0,3.9,0.9,5.1,2.6   c1.2,1.7,1.8,3.9,1.8,6.7V32.6z M50.7,29.6c-0.5,1.1-1.3,2.1-2.3,3.2c-1.8,1.8-3.8,2.7-6,2.6c-2.2-0.1-4.2-1-6-2.8l-0.5-0.5   c-1.9-1.9-2.9-3.9-3-6.1s0.6-4.2,2.3-5.9c1.7-1.7,3.5-2.5,5.4-2.4c1.9,0.1,3.8,1,5.5,2.7l1.8,1.8l-7.4,7.4l0,0.1   c0.9,0.8,1.8,1.2,2.9,1.2c1,0,1.9-0.4,2.8-1.2c0.7-0.7,1.3-1.4,1.6-2.1s0.6-1.4,0.9-2.3l3,1.2C51.6,27.5,51.3,28.5,50.7,29.6z"/>
+						</g>
+</svg>
 				</div>
 
 				<div class="clearfix"></div>
