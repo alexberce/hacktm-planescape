@@ -41,6 +41,30 @@
     background: #fff;
     margin-bottom: 20px;
 }
+
+.event-questions-section {
+    background: #fff;
+}
+
+.event-question {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+ol.answers_group{
+   padding-left: 30px;
+    margin-top: 10px;
+}
+
+.event-answer {
+
+}
+
+.event-answer .badge {
+    margin-left: 10px;
+}
+
 .section-title {
     font-size: 20px;
     font-weight: bold;
@@ -59,4 +83,8 @@
 }
 .margin_button{
     margin-left: 20px;
+}
+
+#add_answer {
+    cursor: pointer;
 }

@@ -63,7 +63,7 @@ class Activity extends MY_Controller
         $answer1 = $this->input->post('answer1');
         $answer2 = $this->input->post('answer2');
 
-        $this->form_validation->set_rules('question','Question','requiered');
+        $this->form_validation->set_rules('question','Question','required');
 
         if($this->form_validation->run() == true){
             $data = array(
@@ -89,6 +89,7 @@ class Activity extends MY_Controller
                 $this->Activity_model->addAnswer($answer);
             }
 
+			redirect('activity/view/' . $id);
         }
 
         $this->data['view']='activity/add_question_answer';
@@ -119,7 +120,7 @@ class Activity extends MY_Controller
             $this->data['questions'] = $this->Activity_model->getQuestions($eventId);
             if(is_array($this->data['questions']) and !empty($this->data['questions'])){
                 foreach($this->data['questions'] as $question){
-                    $answers[] = $this->Activity_model->getAnswers($question['id']);
+                    $answers[$question['id']] = $this->Activity_model->getAnswers($question['id']);
                 }
                 $this->data['answers'] = $answers;
             }

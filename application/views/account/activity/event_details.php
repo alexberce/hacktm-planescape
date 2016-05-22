@@ -72,40 +72,33 @@ if (is_array($event_details)) {
 				<hr />
 			</div>
 
-
-			<div class="event-invite-section">
+			<div class="event-questions-section">
 				<div class="col-md-12" id="questions_content">
-
 					<div class="section-title">
 						Questions
 					</div>
 
 					<?php if(isset($questions) and is_array($questions) and !empty($questions)) { ?>
+						<div class="event-invite-section-content">
+						<?php foreach($questions as $key => $question) { ?>
+							<div class="event-question">
+								<div><?php echo $question['text'] ;?></div>
 
-						<div class="section-title">
-							Questions
-						</div>
-
-						<?php for($i=0;$i<=count($questions);$i++) { ?>
-
-							<?php $number = $i+1;?>
-							<div class="event-invite-section-content">
-								<h2><?php echo $number.'. '.$questions[$i]['text'] ;?></h2>
-
-								<?php if(isset($answers) and is_array($answers) and !empty($answers)) { ?>
-
-									<?php for($i=0;$i<=count($answers);$i++){?>
-
-										<?php $numberAnswer = $i+1;?>
-										<h1><?php echo $numberAnswer.'. '.$answers[$i]['text'] ;?></h1>
-										<div><i class="fa fa-plus-square" aria-hidden="true"></i><?php echo $answers[$i]['votes'];?></div>
-
+								<?php if(isset($answers[$question['id']]) and is_array($answers[$question['id']]) and !empty($answers[$question['id']])) { ?>
+									<ol class="answers_group" start="1">
+									<?php foreach($answers[$question['id']] as $answer_key => $answer){ ?>
+										<li class="event-answer">
+											<?php echo $answer['text'] ;?></>
+											<span class="badge">
+												<?php echo $answer['votes'];?>
+											</span>
+										</li>
 									<?php } ?>
+									</ol>
 								<?php } ?>
-
 							</div>
-
 						<?php } ?>
+						</div>
 					<?php } ?>
 
 					<?php if($detail['user_id'] == $this->session->userdata('id')) { ?>
@@ -114,7 +107,9 @@ if (is_array($event_details)) {
 							<?php $this->load->view('account/activity/add_question_answer.php',array('id' => $detail['id'])); ?>
 						</div>
 					<?php } ?>
+					<div class="col-md-12"><div class="col-md-12"><div class="col-md-12"><hr /></div></div></div>
 				</div>
+				<div class="clearfix"></div>
 			</div>
 
 

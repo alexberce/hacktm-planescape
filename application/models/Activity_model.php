@@ -146,16 +146,13 @@ class Activity_model extends CI_Model
 
 	public function addAnswer($data)
 	{
-		$this->db->insert('question_answer', $data);
+		$this->db->insert('question_answers', $data);
 	}
 
     public function getQuestions($activityId)
     {
-        $this->db->select('text');
-        $this->db->from('questions');
         $this->db->where('activity_id',$activityId);
-
-        $query = $this->db->get();
+        $query = $this->db->get('questions');
 
         return $query->result_array();
 
@@ -163,12 +160,9 @@ class Activity_model extends CI_Model
 
     public function getAnswers($questionId)
     {
-        $this->db->select('text,votes');
-        $this->db->from('question_answers');
         $this->db->where('question_id',$questionId);
 
-        $query = $this->db->get();
-
+        $query = $this->db->get('question_answers');
         return $query->result_array();
     }
 
