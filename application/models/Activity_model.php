@@ -8,6 +8,18 @@ class Activity_model extends CI_Model
 		$this->user_id = $this->session->userdata('id');
 	}
 
+	public function getNumberAcceptEvent($id)
+	{
+		$this->db->select('COUNT(accepted) AS accepted');
+		$this->db->from('invitations');
+		$this->db->where('event_id',$id);
+		$this->db->where('accepted',1);
+
+		$query = $this->db->get();
+
+		return $query->row();
+	}
+
 	public function getActivities()
 	{
 		$invitations_id = array();

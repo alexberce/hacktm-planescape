@@ -5,7 +5,11 @@
 } else {
     $class = 'upcoming';
     $participation_text = 'will be there';
-}?>
+}
+
+
+
+?>
 <div class="all-<?php echo $class;?>-event" >
     <div class="ended-events-top">
         <img src="<?php echo  base_url() .$activity['path'] ; ?>">
@@ -43,7 +47,11 @@
             </div>
             <div class="<?php echo $class;?>-events-votes">
                 <i class="fa fa-lg fa-users" aria-hidden="true"></i>
-                <?php echo $activity['votes'] . ' ' . $participation_text; ?>
+               <?php foreach($accepted_invitation[$activity['id']] as $value){ ?>
+                   <?php echo $value+1 . ' ' . $participation_text; ?>
+               <?php } ?>
+
+
             </div>
         </div>
         <div class="clearfix"></div>

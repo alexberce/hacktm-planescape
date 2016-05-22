@@ -32,6 +32,27 @@ class Dashboard extends MY_Controller
 			$this->data['endedEvents'] = $this->Activity_model->getEndedActivities();
 			$this->data['upcomingEvents'] = $this->Activity_model->getUpcomingActivities();
 			$this->data['openEvents'] = $this->Activity_model->getOpenActivities();
+			if(is_array($this->data['endedEvents']) and !empty($this->data['endedEvents'])) {
+				foreach ($this->data['endedEvents'] as $activity) {
+					$goingEnded[$activity['id']] = $this->Activity_model->getNumberAcceptEvent($activity['id']);
+				}
+			}
+			if(is_array($this->data['upcomingEvents']) and !empty($this->data['upcomingEvents'])) {
+				foreach ($this->data['upcomingEvents'] as $activity) {
+					$goingUpcoming[$activity['id']] = $this->Activity_model->getNumberAcceptEvent($activity['id']);
+				}
+			}
+			if(is_array($this->data['openEvents']) and !empty($this->data['openEvents'])) {
+				foreach ($this->data['openEvents'] as $activity) {
+					$goingOpen[$activity['id']] = $this->Activity_model->getNumberAcceptEvent($activity['id']);
+				}
+			}
+
+			$this->data['accepted_invitation'] = array(
+				'ended' => $goingEnded,
+				'upcoming' => $goingUpcoming,
+				'open' => $goingOpen
+			);
 
 			$this->load->view('account/layout', $this->data);
 		}

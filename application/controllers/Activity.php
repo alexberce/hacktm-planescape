@@ -12,10 +12,18 @@ class Activity extends MY_Controller
 
     public function index()
     {
-
-        $this->data['activities'] = $this->Activity_model->getActivities();
+        $data['activities'] = $this->Activity_model->getActivities();
+        if(isset($data['activities']) and !empty($data['activities'])) {
+            foreach($this->data['activities'] as $activity)
+            {
+                $going[$activity['id']] = $this->Activity_model->getNumberAcceptEvent($activity['id']);
+            }
+        }
+       $data['accepted_invitation'] = array(
+           'all' => $going
+       );
         $this->data['view']='activity/list';
-        $this->load->view('account/layout',$this->data);
+        $this->load->view('account/layout',$data);
     }
 
     public function add()

@@ -10,7 +10,7 @@
     <div class="all-upcoming-events">
         <?php $upcomingEvents = isset($upcomingEvents) ? $upcomingEvents : array(); ?>
         <?php foreach ($upcomingEvents as $upcomingEvent) { ?>
-            <?php $this->load->view('account/activity/activity_template.php',array('activity' => $upcomingEvent,'date' => 'date'));?>
+            <?php $this->load->view('account/activity/activity_template.php',array('activity' => $upcomingEvent,'date' => 'date','accepted_invitation' => $accepted_invitation['upcoming']));?>
         <?php } ?>
     </div>
     <?php }?>
@@ -23,7 +23,7 @@
         <div class="all-upcoming-events">
             <?php $openEvents = isset($openEvents) ? $openEvents : array(); ?>
             <?php foreach ($openEvents as $openEvent) { ?>
-                <?php $this->load->view('account/activity/activity_template.php',array('activity' => $openEvent,'date' => 'date'));?>
+                <?php $this->load->view('account/activity/activity_template.php',array('activity' => $openEvent,'date' => 'date','accepted_invitation' => $accepted_invitation['open']));?>
             <?php } ?>
         </div>
      <?php } ?>
@@ -48,7 +48,7 @@
     <div class="all-ended-events">
         <?php $endedEvents = isset($endedEvents) ? $endedEvents : array(); ?>
         <?php foreach ($endedEvents as $endedEvent) { ?>
-            <?php $this->load->view('account/activity/activity_template.php',array('activity' => $endedEvent,'date' => 'end_date'));?>
+            <?php $this->load->view('account/activity/activity_template.php',array('activity' => $endedEvent,'date' => 'end_date','accepted_invitation' => $accepted_invitation['ended']));?>
         <?php } ?>
     </div>
     <?php }?>
