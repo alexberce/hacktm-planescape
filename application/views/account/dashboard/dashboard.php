@@ -40,7 +40,7 @@
     </div> -->
     <?php if(!empty($endedEvents)){?>
     <div class="events">
-        <div class="title">Ended events</div>
+        <div class="title">Past events</div>
         <div class="event-number-finished"><?php echo count($endedEvents);?></div>
         <hr>
     </div>
