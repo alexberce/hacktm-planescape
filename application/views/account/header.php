@@ -46,7 +46,7 @@
 		<div class="col-md-3 left_col">
 			<div class="left_col scroll-view">
 				<div class="navbar nav_title" style="border: 0;">
-					<a href="<?=base_url()?>" class="site_title"><img src="<?=base_url()?>app_assets/images/logo.png" /></a>
+					<a href="<?=base_url()?>" class="site_title"><img class="logo-img" src="<?=base_url()?>app_assets/images/logo.png" /></a>
 					<svg class="logo_small_sidebar" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 62.3 62.3" style="enable-background:new 0 0 62.3 62.3;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#4D4D4E;}
