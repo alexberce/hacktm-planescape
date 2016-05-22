@@ -30,6 +30,9 @@ $(document).ready(function () {
 		$('#question_add').click(function () {
 			$('#add_question_form').hide();
 		})
+	});
+	$('#votes').click(function(){
+
 	})
 });
 

@@ -80,6 +80,7 @@ if (is_array($event_details)) {
 
 					<?php if(isset($questions) and is_array($questions) and !empty($questions)) { ?>
 						<div class="event-invite-section-content">
+
 						<?php foreach($questions as $key => $question) { ?>
 							<div class="event-question">
 								<div><?php echo $question['text'] ;?></div>
@@ -89,9 +90,11 @@ if (is_array($event_details)) {
 									<?php foreach($answers[$question['id']] as $answer_key => $answer){ ?>
 										<li class="event-answer">
 											<?php echo $answer['text'] ;?></>
-											<span class="badge">
-												<?php echo $answer['votes'];?>
-											</span>
+
+												<span class="badge">
+													<?php echo $answer['votes'];?>
+												</span>
+
 										</li>
 									<?php } ?>
 									</ol>

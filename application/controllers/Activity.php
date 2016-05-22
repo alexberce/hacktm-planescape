@@ -57,11 +57,17 @@ class Activity extends MY_Controller
 
     }
 
+    public function answer_edit($id)
+    {
+        $votes = $this->input->post('votes');
+
+
+    }
+
     public function question($id)
     {
         $question = $this->input->post('question');
-        $answer1 = $this->input->post('answer1');
-        $answer2 = $this->input->post('answer2');
+        $answers = $this->input->post('answer');
 
         $this->form_validation->set_rules('question','Question','required');
 
@@ -73,20 +79,17 @@ class Activity extends MY_Controller
             $this->Activity_model->addQuestion($data);
             $question_id = $this->db->insert_id();
 
-            $data = array(
-                array(
-                    'text' => $answer1,
-                    'question_id' => $question_id
-                ),
-                array(
-                    'text' => $answer2,
-                    'question_id' => $question_id
-                ),
+            $data = array();
+            foreach($answers as $answer){
+                $data[] = array(
+                        'text' => $answer,
+                        'question_id' => $question_id
 
-            );
+                );
+            }
 
-            foreach($data as $answer){
-                $this->Activity_model->addAnswer($answer);
+            foreach($data as $data_answer){
+                $this->Activity_model->addAnswer($data_answer);
             }
 
 			redirect('activity/view/' . $id);
