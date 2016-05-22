@@ -20,11 +20,24 @@
 				<span class="message">You've been invited to <b><?= $notification['title'] ?></b> event
 				</span>
 					</a>
+
+					<div class="notification-overlay">
+						<div class="half">
+							<div class="action">
+								<a href="<?=base_url()?>activity/accept_invite/<?=$notification['hash']?>">Accept</a>
+							</div>
+						</div>
+						<div class="half">
+							<div class="action white">
+								<a href="<?=base_url()?>activity/view/<?=$notification['id']?>">View</a>
+							</div>
+						</div>
+					</div>
 				</li>
 			<?php endforeach; ?>
 			<li>
 				<div class="text-center">
-					<a href="<?=base_url()?>invitation">
+					<a href="javascript:void(0);">
 						<strong>See All Invitations</strong>
 						<i class="fa fa-angle-right"></i>
 					</a>

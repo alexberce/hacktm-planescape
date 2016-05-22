@@ -169,3 +169,50 @@ ul.msg_list li a .time {
     color: #fff !important;
     cursor: default;
 }
+
+.notification-overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: rgba(160,160,160,.7);
+    height: 100%;
+    display: none;
+}
+
+#menu1 li:hover .notification-overlay {
+    display: block;
+}
+
+.notification-overlay .half {
+    width: 50%;
+    float: left;
+    position: relative;
+    display: inline-flex;
+    padding: 14px;
+}
+
+.notification-overlay .action {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 5px;
+    background: #7CC576;
+    color: #fff;
+    cursor: pointer;
+}
+
+.notification-overlay .action a {
+    color: #fff;
+}
+
+.notification-overlay .action.white a {
+    color: #000;
+}
+
+.notification-overlay .action.white {
+    background: #fff;
+    color: #000;
+}
