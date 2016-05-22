@@ -96,6 +96,8 @@ class Activity extends MY_Controller
             }
 
 			redirect('activity/view/' . $id);
+        }else{
+            redirect('activity/view/' . $id);
         }
 
         $this->data['view']='activity/add_question_answer';
