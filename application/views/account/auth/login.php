@@ -26,7 +26,7 @@
       <hr />
       <form action="<?=base_url()?>account/login" method="post" id="login-form">
         <div class="form-group email-field email-form">
-          <input type="text" class="form-control" placeholder="Username or Email" id="username-field" name="identifier">
+          <input type="text" class="form-control" placeholder="Username" id="username-field" name="identifier" onchange="myFunction()">
           <span class="form-control-feedback glyphicon " aria-hidden="true" id="email-check"></span>
         </div>
          <div class="form-group password-form">

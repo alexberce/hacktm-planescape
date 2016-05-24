@@ -44,4 +44,8 @@ $(function() {
       $('.'+form+'-form').removeClass('has-error').removeClass('has-success').addClass('has-success');
     }
   }
+
+  function myFunction(){
+    console.log('ceva');
+  }
 });

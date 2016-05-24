@@ -9,7 +9,7 @@
     
     <div class="all-upcoming-events">
         <?php $upcomingEvents = isset($upcomingEvents) ? $upcomingEvents : array(); ?>
-        <?php foreach ($upcomingEvents as $upcomingEvent) { ?>
+        <?php foreach ($upcomingEvents as $key => $upcomingEvent) { ?>
             <?php $this->load->view('account/activity/activity_template.php',array('activity' => $upcomingEvent,'date' => 'date','accepted_invitation' => $accepted_invitation['upcoming']));?>
         <?php } ?>
     </div>

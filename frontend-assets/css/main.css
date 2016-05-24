@@ -525,3 +525,13 @@
 		pointer-events: none;
    		cursor: default !important;
 	}
+
+	.fa-facebook-square, .fa-twitter-square, .fa-google-plus-square {
+		float: left;
+		margin-top: 3px;
+		margin-left: -5px;
+	}
+
+	.fa-lg.fa-facebook-square, .fa-lg.fa-twitter-square, .fa-lg.fa-google-plus-square {
+		font-size: 1.7em;
+	}
